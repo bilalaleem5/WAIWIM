@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#00333B" />
+  <g transform="translate(10, 16) scale(0.8)">
+    <!-- Right V -->
+    <path d="M52 10 L68 76 L78 76 L98 10 L82 10 L73 54 L62 10 Z" fill="#FFFFFF" />
+    <!-- Left diagonal bar -->
+    <path d="M12 10 L28 10 L39 52 L23 52 Z" fill="#FFFFFF" />
+    <!-- Folded ribbon loop -->
+    <path d="M21 44 L37 44 L49 76 L39 76 Z" fill="#32E0E3" />
+    <path d="M37 44 L49 76 L63 32 L51 32 Z" fill="#32E0E3" opacity="0.95" />
+    <path d="M21 44 L29 65 L41 65 Z" fill="#25c8cb" opacity="0.85" />
+  </g>
+</svg>
