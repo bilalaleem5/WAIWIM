@@ -443,6 +443,22 @@ function Footer() {
             <span className="hover:text-emerald-700 cursor-pointer">{pick(["Privacy & Data Residency", "الخصوصية وسرية البيانات"])}</span>
           </div>
         </div>
+
+        {/* Developed by Zetamize Attribution */}
+        <div className="mt-6 pt-4 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2 pb-2">
+          <p>{pick(["Saudi Arabia Non-Profit Healthcare & Biotech Platform", "المنصة السعودية غير الربحية للرعاية الصحية والتقنية الحيوية"])}</p>
+          <p className="flex items-center gap-1.5 font-medium">
+            <span>{pick(["Developed by", "تم التطوير بواسطة"])}</span>
+            <a 
+              href="https://zetamize.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-bold text-emerald-700 hover:text-emerald-800 underline underline-offset-2 transition-colors inline-flex items-center gap-1"
+            >
+              Zetamize
+            </a>
+          </p>
+        </div>
       </div>
 
       <VoiceMattersModal open={voiceModal} onClose={() => setVoiceModal(false)} />
