@@ -93,7 +93,7 @@ export function HomePage() {
    2. ABOUT US PAGE
    ========================================================================= */
 export function AboutPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.about;
 
   return (
@@ -1028,7 +1028,7 @@ export function GovernancePage() {
    5. IMPACT DASHBOARD PAGE
    ========================================================================= */
 export function ImpactPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.impact;
 
   return (
@@ -1323,7 +1323,7 @@ export function ResearchPage() {
    7. STRATEGIC PARTNERSHIPS PAGE
    ========================================================================= */
 export function PartnershipsPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.partnerships;
 
   return (
@@ -1424,7 +1424,7 @@ export function PartnershipsPage() {
    8. VOLUNTEER IMPACT PORTAL PAGE
    ========================================================================= */
 export function VolunteerPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.volunteer;
 
   return (
@@ -1592,7 +1592,7 @@ function CampaignCard({ camp }: { camp: typeof donationCampaigns[number] }) {
 }
 
 export function SupportPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.support;
 
   return (
@@ -1753,7 +1753,7 @@ export function ReportsPage() {
    11. CONTACT & WHISTLEBLOWING PAGE
    ========================================================================= */
 export function ContactPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.contact;
   const [voiceOpen, setVoiceOpen] = useState(false);
 
