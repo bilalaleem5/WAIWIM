@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   HeartPulse, Activity, ArrowRight, ShieldCheck, Zap, 
@@ -276,19 +276,19 @@ export function BiomedicalDeviceFlow() {
              - Living medical curves (Airway Pressure, Microfluidic Flow, Plethysmograph)
              - Live digital gauges with micro-adjustments
              ======================================================================= */}
-          <div className="lg:col-span-4 rounded-3xl bg-slate-950 p-5 sm:p-6 text-white shadow-2xl flex flex-col justify-between border border-slate-800 relative overflow-hidden group">
+          <div className="lg:col-span-4 rounded-3xl bg-white p-5 sm:p-6 text-slate-900 shadow-xl flex flex-col justify-between border border-slate-200/90 relative overflow-hidden group">
             
             {/* Top Oscilloscope Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
               <div className="flex items-center gap-2">
-                <div className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-mono text-xs font-bold tracking-wider text-emerald-400">
+                <div className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="font-mono text-xs font-bold tracking-wider text-emerald-700">
                   OSCILLOSCOPE // CH-1
                 </span>
               </div>
 
               {/* Device Selector Pill */}
-              <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+              <div className="flex gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
                 {devices.map((d, idx) => (
                   <button
                     key={d.id}
@@ -297,7 +297,7 @@ export function BiomedicalDeviceFlow() {
                       "px-2.5 py-1 rounded-lg text-[9px] font-mono font-bold transition-all cursor-pointer",
                       selectedDeviceIdx === idx 
                         ? "bg-emerald-600 text-white shadow-xs" 
-                        : "text-slate-400 hover:text-white"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-white/80"
                     )}
                   >
                     {d.id === "icu-vent" ? "VENT" : d.id === "infusion-pump" ? "PUMP" : "NEO"}
@@ -308,35 +308,35 @@ export function BiomedicalDeviceFlow() {
 
             {/* Active Device Info */}
             <div className="py-3">
-              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
                 {language === "ar" ? "الجهاز تحت المعايرة" : "ACTIVE SPECIMEN"}
               </div>
-              <div className="text-base sm:text-lg font-black text-white tracking-tight mt-0.5">
+              <div className="text-base sm:text-lg font-black text-slate-900 tracking-tight mt-0.5">
                 {language === "ar" ? currentDevice.nameAr : currentDevice.nameEn}
               </div>
-              <div className="text-[9px] font-mono text-emerald-400/90 mt-0.5">
+              <div className="text-[10px] font-mono text-emerald-700 font-semibold mt-0.5">
                 {currentDevice.serial}
               </div>
             </div>
 
             {/* LIVE ANIMATED WAVEFORM GRAPH (SVG CLINICAL CURVES) */}
-            <div className="relative my-2 h-44 sm:h-48 w-full bg-slate-900/90 rounded-2xl p-3 border border-slate-800/90 overflow-hidden flex flex-col justify-between">
+            <div className="relative my-2 h-44 sm:h-48 w-full bg-slate-50 rounded-2xl p-3 border border-slate-200/90 overflow-hidden flex flex-col justify-between">
               
               {/* Oscilloscope Millimeter Grid */}
               <div 
                 className="absolute inset-0 pointer-events-none opacity-20"
                 style={{
-                  backgroundImage: 'radial-gradient(circle, #34d399 0.8px, transparent 0.8px)',
+                  backgroundImage: 'radial-gradient(circle, #059669 1px, transparent 1px)',
                   backgroundSize: '16px 16px'
                 }}
               />
 
               {/* Dynamic Sweep Beam Line */}
-              <div className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-300 to-transparent shadow-[0_0_12px_#22d3ee] animate-pulse pointer-events-none left-1/2" />
+              <div className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-emerald-500 to-transparent shadow-[0_0_8px_rgba(16,185,129,0.3)] animate-pulse pointer-events-none left-1/2" />
 
               {/* Curve 1: Paw (Airway Pressure) */}
               <div className="relative z-10 space-y-1">
-                <div className="flex justify-between text-[9px] font-mono font-bold text-emerald-400">
+                <div className="flex justify-between text-[9px] font-mono font-bold text-emerald-800">
                   <span>Paw (cmH2O)</span>
                   <span>PEAK: 24.8</span>
                 </div>
@@ -344,7 +344,7 @@ export function BiomedicalDeviceFlow() {
                   <path 
                     d="M 0 38 Q 20 38, 30 10 Q 40 8, 55 12 Q 70 38, 100 38 Q 120 38, 130 10 Q 140 8, 155 12 Q 170 38, 200 38 Q 220 38, 230 10 Q 240 8, 255 12 Q 270 38, 300 38" 
                     fill="none" 
-                    stroke="#10b981" 
+                    stroke="#059669" 
                     strokeWidth="2.5" 
                     strokeLinecap="round"
                     className="animate-waveform-flow"
@@ -354,7 +354,7 @@ export function BiomedicalDeviceFlow() {
 
               {/* Curve 2: Flow Rate (L/min) */}
               <div className="relative z-10 space-y-1">
-                <div className="flex justify-between text-[9px] font-mono font-bold text-cyan-400">
+                <div className="flex justify-between text-[9px] font-mono font-bold text-sky-800">
                   <span>Flow (L/min)</span>
                   <span>FLOW: +48.2</span>
                 </div>
@@ -362,7 +362,7 @@ export function BiomedicalDeviceFlow() {
                   <path 
                     d="M 0 20 Q 15 20, 25 5 Q 35 35, 60 20 Q 100 20, 125 5 Q 135 35, 160 20 Q 200 20, 225 5 Q 235 35, 260 20 Q 290 20, 300 20" 
                     fill="none" 
-                    stroke="#06b6d4" 
+                    stroke="#0284c7" 
                     strokeWidth="2" 
                     strokeLinecap="round"
                     className="animate-waveform-flow"
@@ -372,32 +372,32 @@ export function BiomedicalDeviceFlow() {
               </div>
 
               {/* Telemetry Clock Watermark */}
-              <div className="relative z-10 flex justify-between text-[8px] font-mono text-slate-500 pt-1 border-t border-slate-800">
+              <div className="relative z-10 flex justify-between text-[8px] font-mono text-slate-500 pt-1 border-t border-slate-200">
                 <span>SWEEP: 25 mm/s</span>
-                <span className="text-emerald-400 font-bold">CYCLE: {currentStage.code} / 04</span>
+                <span className="text-emerald-700 font-bold">CYCLE: {currentStage.code} / 04</span>
               </div>
             </div>
 
             {/* LIVE CLINICAL GAUGES GRID */}
             <div className="grid grid-cols-2 gap-2.5 pt-2">
-              <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
-                <span className="text-[9px] text-slate-400 font-mono block">PEEP PRESSURE</span>
-                <span className="text-sm font-black font-mono text-emerald-400">{currentDevice.peep}</span>
+              <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/90 shadow-2xs">
+                <span className="text-[9px] text-slate-500 font-mono block">PEEP PRESSURE</span>
+                <span className="text-sm font-black font-mono text-emerald-700">{currentDevice.peep}</span>
               </div>
 
-              <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
-                <span className="text-[9px] text-slate-400 font-mono block">O2 PURITY (FiO2)</span>
-                <span className="text-sm font-black font-mono text-cyan-400">{currentDevice.fio2}</span>
+              <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/90 shadow-2xs">
+                <span className="text-[9px] text-slate-500 font-mono block">O2 PURITY (FiO2)</span>
+                <span className="text-sm font-black font-mono text-sky-700">{currentDevice.fio2}</span>
               </div>
 
-              <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
-                <span className="text-[9px] text-slate-400 font-mono block">TIDAL VOLUME</span>
-                <span className="text-sm font-black font-mono text-white">{currentDevice.tidalVol}</span>
+              <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/90 shadow-2xs">
+                <span className="text-[9px] text-slate-500 font-mono block">TIDAL VOLUME</span>
+                <span className="text-sm font-black font-mono text-slate-900">{currentDevice.tidalVol}</span>
               </div>
 
-              <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
-                <span className="text-[9px] text-slate-400 font-mono block">CALIBRATION ERROR</span>
-                <span className="text-sm font-black font-mono text-teal-300">{currentDevice.compliance}</span>
+              <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/90 shadow-2xs">
+                <span className="text-[9px] text-slate-500 font-mono block">CALIBRATION ERROR</span>
+                <span className="text-sm font-black font-mono text-teal-700">{currentDevice.compliance}</span>
               </div>
             </div>
 
