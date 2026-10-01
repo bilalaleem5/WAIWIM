@@ -1,4 +1,4 @@
-﻿export type Language = "en" | "ar";
+export type Language = "en" | "ar";
 
 export const navItems = [
   ["Home", "الرئيسية", "/"],
@@ -565,6 +565,16 @@ export const proposedWorkTeams = [
 ] as const;
 
 export const marketAndImpactData = {
+  globalMarketSize: {
+    valuation: "$45 Billion",
+    forecast: [
+      "Projected global AI drug discovery market valuation by 2030, driven by generative molecular algorithms and robotic screening.",
+      "القيمة السوقية العالمية المتوقعة للذكاء الاصطناعي في اكتشاف الأدوية بحلول 2030 مدفوعة بالخوارزميات الجزيئية التوليدية."
+    ],
+    growthRate: "25–30% CAGR",
+    timelineReduction: "40–60%",
+    costReduction: "30–50%"
+  },
   marketSize: {
     headline: [
       "Global AI Healthcare Market Size $45 Billion Market Projection 2026",

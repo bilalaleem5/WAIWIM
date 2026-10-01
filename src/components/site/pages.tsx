@@ -1261,58 +1261,72 @@ export function ResearchPage() {
             ])}
           />
 
-          <div className="grid gap-6 sm:grid-cols-3 mt-10">
-            <div className="p-8 rounded-[28px] bg-emerald-950 text-white shadow-xl flex flex-col justify-between">
-              <div>
-                <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">
-                  {pick(["Market Valuation", "القيمة السوقية المتوقعة"])}
-                </span>
-                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-white block">
-                  {marketAndImpactData.globalMarketSize.valuation}
-                </strong>
-                <p className="mt-4 text-xs text-emerald-200 leading-relaxed font-normal">
-                  {pick(marketAndImpactData.globalMarketSize.forecast)}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-emerald-800/80 text-[11px] font-mono text-emerald-300">
-                CAGR: {marketAndImpactData.globalMarketSize.growthRate}
-              </div>
-            </div>
+          {(() => {
+            const market = marketAndImpactData?.globalMarketSize ?? {
+              valuation: "$45 Billion",
+              forecast: [
+                "Projected global AI drug discovery market valuation by 2030, driven by generative molecular algorithms and robotic screening.",
+                "القيمة السوقية العالمية المتوقعة للذكاء الاصطناعي في اكتشاف الأدوية بحلول 2030 مدفوعة بالخوارزميات الجزيئية التوليدية."
+              ],
+              growthRate: "25–30% CAGR",
+              timelineReduction: "40–60%",
+              costReduction: "30–50%"
+            };
+            return (
+              <div className="grid gap-6 sm:grid-cols-3 mt-10">
+                <div className="p-8 rounded-[28px] bg-emerald-950 text-white shadow-xl flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">
+                      {pick(["Market Valuation", "القيمة السوقية المتوقعة"])}
+                    </span>
+                    <strong className="font-display text-4xl sm:text-5xl font-extrabold text-white block">
+                      {market.valuation}
+                    </strong>
+                    <p className="mt-4 text-xs text-emerald-200 leading-relaxed font-normal">
+                      {pick(market.forecast)}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-emerald-800/80 text-[11px] font-mono text-emerald-300">
+                    CAGR: {market.growthRate}
+                  </div>
+                </div>
 
-            <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
-              <div>
-                <span className="text-xs uppercase tracking-widest text-amber-700 font-bold block mb-2">
-                  {pick(["Timeline Compression", "تسريع الجداول الزمنية"])}
-                </span>
-                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
-                  {marketAndImpactData.globalMarketSize.timelineReduction}
-                </strong>
-                <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
-                  {pick(["Reduction in initial pharmaceutical target discovery and candidate optimization cycles.", "تقليص زمن مراحل الاستكشاف الأولي وتطوير المركبات الدوائية الواعدة."])}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
-                {pick(["Virtual Molecular Screening", "الفحص الجزيئي الافتراضي"])}
-              </div>
-            </div>
+                <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-amber-700 font-bold block mb-2">
+                      {pick(["Timeline Compression", "تسريع الجداول الزمنية"])}
+                    </span>
+                    <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
+                      {market.timelineReduction}
+                    </strong>
+                    <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
+                      {pick(["Reduction in initial pharmaceutical target discovery and candidate optimization cycles.", "تقليص زمن مراحل الاستكشاف الأولي وتطوير المركبات الدوائية الواعدة."])}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
+                    {pick(["Virtual Molecular Screening", "الفحص الجزيئي الافتراضي"])}
+                  </div>
+                </div>
 
-            <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
-              <div>
-                <span className="text-xs uppercase tracking-widest text-teal-700 font-bold block mb-2">
-                  {pick(["Capital Efficiency", "كفاءة الإنفاق البحثي"])}
-                </span>
-                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
-                  {marketAndImpactData.globalMarketSize.costReduction}
-                </strong>
-                <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
-                  {pick(["Reduction in preclinical development cost through precision in silico screening.", "خفض تكاليف مراحل ما قبل التجارب السريرية عبر النمذجة الحاسوبية الدقيقة."])}
-                </p>
+                <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-teal-700 font-bold block mb-2">
+                      {pick(["Capital Efficiency", "كفاءة الإنفاق البحثي"])}
+                    </span>
+                    <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
+                      {market.costReduction}
+                    </strong>
+                    <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
+                      {pick(["Reduction in preclinical development cost through precision in silico screening.", "خفض تكاليف مراحل ما قبل التجارب السريرية عبر النمذجة الحاسوبية الدقيقة."])}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
+                    {pick(["SFDA Preclinical Alignment", "تكامل ما قبل السريري"])}
+                  </div>
+                </div>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
-                {pick(["SFDA Preclinical Alignment", "تكامل ما قبل السريري"])}
-              </div>
-            </div>
-          </div>
+            );
+          })()}
         </div>
       </Section>
     </>
