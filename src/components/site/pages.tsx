@@ -355,7 +355,7 @@ export function AboutPage() {
                     {pick(member.name)}
                   </h4>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {pick(member.bio)}
+                    {pick(member.credentials || member.bio || ["", ""])}
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
@@ -390,11 +390,11 @@ export function AboutPage() {
                       {i + 1}
                     </span>
                     <h4 className="font-display text-base font-bold text-slate-900">
-                      {pick(team.name)}
+                      {pick(team.title || team.name || ["", ""])}
                     </h4>
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                    {pick(team.scope)}
+                    {pick(team.description || team.scope || ["", ""])}
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1.5">
@@ -676,7 +676,7 @@ export function ProgramsPage() {
                     </span>
                   </div>
                   <h3 className="font-display text-xl font-bold text-slate-900 leading-snug">
-                    {pick(init.name)}
+                    {pick(init.title || init.name || ["", ""])}
                   </h3>
                   <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
                     {pick(init.description)}
@@ -690,8 +690,8 @@ export function ProgramsPage() {
                   <a
                     href={`https://wa.me/966505210112?text=${encodeURIComponent(
                       language === "ar"
-                        ? `السلام عليكم، أود الاستفسار والمشاركة في: (${init.name[1]}) لدى جمعية بالذكاء الاصطناعي نبتكر الدواء.`
-                        : `Hello, I would like to inquire about: "${init.name[0]}" at WAIWIM.`
+                        ? `السلام عليكم، أود الاستفسار والمشاركة في: (${(init.title || init.name)?.[1] || ""}) لدى جمعية بالذكاء الاصطناعي نبتكر الدواء.`
+                        : `Hello, I would like to inquire about: "${(init.title || init.name)?.[0] || ""}" at WAIWIM.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1008,7 +1008,7 @@ export function GovernancePage() {
                     {pick(member.name)}
                   </h4>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {pick(member.bio)}
+                    {pick(member.credentials || member.bio || ["", ""])}
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
