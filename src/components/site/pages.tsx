@@ -1396,7 +1396,108 @@ export function PartnershipsPage() {
               "قدّم مقترح الشراكة المؤسسي لجهتك. ستقوم لجنة الشراكات بالتواصل معكم خلال 3 أيام عمل."
             ])}
           />
-          <SmartForm 
+          <div className="mt-8 p-8 md:p-10 rounded-[28px] bg-white border border-slate-200 shadow-sm">
+            <SmartForm 
+              fields={[
+                { name: "orgName", label: pick(["Organization Name", "اسم الجهة أو المؤسسة"]), required: true },
+                { name: "orgType", label: pick(["Organization Type", "نوع الجهة"]), type: "select", options: ["University / Research Chair", "Specialist Hospital / Medical Center", "Government Agency", "Pharmaceutical Manufacturer", "Philanthropic Foundation"], required: true },
+                { name: "contactName", label: pick(["Contact Person & Title", "اسم المسؤول والصفة الوظيفية"]), required: true },
+                { name: "email", label: pick(["Official Email", "البريد الإلكتروني الرسمي"]), type: "email", required: true },
+                { name: "proposal", label: pick(["Partnership Scope & Objectives", "نطاق الشراكة المقترحة والأهداف المشتركة"]), type: "textarea", required: true }
+              ]}
+              submitLabel={pick(["Submit Partnership Request", "إرسال طلب الشراكة"])}
+              recipientEmail="info@aimedicine.org.sa"
+              subjectPrefix={pick(["[Partnership Proposal]", "[مقترح شراكة مؤسسية]"])}
+              successMessage={pick([
+                "Your partnership proposal has been submitted. Our Partnerships Committee will respond within 3 business days.",
+                "تم تقديم مقترح الشراكة بنجاح. ستقوم لجنة الشراكات بالتواصل معكم خلال 3 أيام عمل."
+              ])}
+            />
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+/* =========================================================================
+   8. VOLUNTEER IMPACT PORTAL PAGE
+   ========================================================================= */
+export function VolunteerPage() {
+  const { pick } = useLanguage();
+  const intro = pageIntro.volunteer;
+
+  return (
+    <>
+      <PageHero 
+        eyebrow={pick(["National Volunteerism", "العمل التطوعي الوطني التخصصي"])}
+        title={pick(intro[0])} 
+        subtitle={pick(intro[1])} 
+      >
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          {[
+            { label: pick(["National Platform Synced", "ربط مباشر بالمنصة الوطنية"]), icon: ShieldCheck },
+            { label: pick(["Verified Hours Certificate", "شهادات ساعات معتمدة"]), icon: Award },
+            { label: pick(["Clinical & Tech Tracks", "مسارات صحية وتقنية"]), icon: BrainCircuit }
+          ].map((item, idx) => (
+            <div 
+              key={idx} 
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-50 text-slate-700 border border-slate-200/90 shadow-2xs"
+            >
+              <item.icon className="size-3.5 text-emerald-600 shrink-0" />
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </PageHero>
+
+      <Section className="py-16 md:py-24">
+        <SectionHeading 
+          align="center"
+          badge={pick(["Specialized Opportunities", "الفرص التطوعية التخصصية"])}
+          title={pick(["High-Impact Volunteer Tracks", "مسارات التطوع التخصصية"])} 
+          subtitle={pick([
+            "All volunteer hours are officially verified and documented on the Saudi National Volunteer Portal.",
+            "توثق كافة الساعات والمهام رسمياً عبر المنصة الوطنية للعمل التطوعي لوزارة الموارد البشرية."
+          ])}
+        />
+
+        <div className="grid gap-6 md:grid-cols-3 mt-10">
+          {[
+            [BrainCircuit, "AI & Machine Learning Researchers", "باحثو الذكاء الاصطناعي", "Mentor students, evaluate computational drug models, and assist in hackathon judging."],
+            [Stethoscope, "Clinical Pharmacists & Physicians", "الصيادلة السريريون والأطباء", "Guide patient eligibility for Hakeem equipment bank and review pharmacogenomics datasets."],
+            [FlaskConical, "Biomedical Calibration Engineers", "مهندسو المعايرة والأجهزة الطبية", "Perform safety inspections and recalibration protocols on life-support equipment."]
+          ].map(([Icon, en, ar, desc], i) => (
+            <div key={i} className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
+              <div>
+                <div className="size-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-5">
+                  <Icon className="size-6" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-slate-900">{pick([en, ar])}</h3>
+                <p className="text-sm text-slate-600 mt-3 leading-relaxed font-normal">{desc}</p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
+                <CheckCircle2 className="size-3.5" />
+                <span>{pick(["National Accreditation Active", "اعتماد الساعات متاح"])}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="mist" className="py-16 md:py-24">
+        <div className="max-w-2xl mx-auto">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Volunteer Registration", "التسجيل التطوعي"])}
+            title={pick(["Join Our Specialized Volunteer Network", "انضم لشبكة الخبراء والمتطوعين"])} 
+            subtitle={pick([
+              "Register your credentials to receive specialized callouts for clinical initiatives and hackathons.",
+              "سجل بياناتك وخبراتك لتصلك الفرص التخصصية في المبادرات الصحية والهاكاثونات العلمية."
+            ])}
+          />
+          <div className="mt-8 p-8 md:p-10 rounded-[28px] bg-white border border-slate-200 shadow-sm">
+            <SmartForm 
               fields={[
                 { name: "fullName", label: pick(["Full Name", "الاسم الكامل"]), required: true },
                 { name: "nationalId", label: pick(["National ID / Iqama (For Portal Sync)", "رقم الهوية أو الإقامة (للتوثيق في المنصة الوطنية)"]), required: true },
@@ -1413,6 +1514,7 @@ export function PartnershipsPage() {
                 "تم تسجيل طلب التطوع بنجاح. سيقوم فريقنا بمراجعة المؤهلات والتنسيق لربط ساعاتكم بالمنصة الوطنية للعمل التطوعي."
               ])}
             />
+          </div>
         </div>
       </Section>
     </>
