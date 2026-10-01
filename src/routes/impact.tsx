@@ -1,2 +1,2 @@
-import {createFileRoute} from "@tanstack/react-router"; import {ImpactPage} from "@/components/site/pages";
+﻿import {createFileRoute} from "@tanstack/react-router"; import {ImpactPage} from "@/components/site/pages";
 export const Route=createFileRoute("/impact")({head:()=>({meta:[{title:"Our Impact — WAIWIM"},{name:"description",content:"Measured outcomes, theory of change, initiative results, and annual impact reports."},{property:"og:title",content:"Our Impact — WAIWIM"},{property:"og:description",content:"Measured. Reported. Transparent."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:ImpactPage});

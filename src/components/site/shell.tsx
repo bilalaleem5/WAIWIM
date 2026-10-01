@@ -2,11 +2,12 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { 
   ArrowUpRight, Search, Menu, X, Linkedin, Instagram, Twitter, 
-  ShieldCheck, Sparkles, Building2, UserCheck, Heart, AlertCircle, FileText 
+  ShieldCheck, Sparkles, Building2, UserCheck, Heart, AlertCircle, FileText,
+  MessageCircle, Phone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { navItems, ui, initiatives, reports } from "@/lib/site-content";
+import { navItems, ui, initiatives, reports, contactDetails } from "@/lib/site-content";
 import { LanguageProvider, useLanguage } from "./language";
 import { ThemeToggle, VoiceMattersModal } from "./primitives";
 import { WaiwimLogo, WaiwimIntroMotion, WaiwimSymbol } from "./brand";
@@ -250,7 +251,6 @@ function Header() {
                     ["Hakeem Medical Bank", "بنك حكيم للأجهزة", "/programs"],
                     ["Thousand Miles Step", "برنامج خطوة الألف ميل", "/programs"],
                     ["AI Drug Discovery Accelerator", "مسرعة الابتكار الدوائي", "/research"],
-                    ["Audited Financial Statements", "القوائم المالية المدققة", "/governance"],
                     ["National Volunteer Opportunities", "الفرص التطوعية الوطنية", "/volunteer"]
                   ].map(([en, ar, to]) => (
                     <Link
@@ -365,11 +365,6 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/governance" className="hover:text-emerald-700 transition-colors">
-                  {pick(["Audited Financial Disclosures", "الإفصاح المالي المدقق"])}
-                </Link>
-              </li>
-              <li>
                 <Link to="/volunteer" className="hover:text-emerald-700 transition-colors">
                   {pick(["Volunteer Portal", "بوابة المتطوعين"])}
                 </Link>
@@ -426,16 +421,35 @@ function Footer() {
               </form>
             )}
 
-            <div className="mt-6 text-xs text-slate-500 space-y-1">
+            <div className="mt-6 p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200/80">
+              <div className="flex items-center gap-2 text-xs font-bold text-emerald-800 mb-1.5">
+                <MessageCircle className="size-4 text-emerald-600 shrink-0" />
+                <span>{contactDetails.phoneDisplay}</span>
+              </div>
+              <p className="text-[11px] text-slate-600 mb-2 leading-tight">
+                {pick(contactDetails.urgentNote)}
+              </p>
+              <a
+                href={contactDetails.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
+              >
+                <span>{pick(contactDetails.startChat)}</span>
+                <ArrowUpRight className="rtl:-scale-x-100 size-3" />
+              </a>
+            </div>
+
+            <div className="mt-4 text-xs text-slate-500 space-y-1">
               <p>📍 {pick(["Kingdom of Saudi Arabia — Riyadh", "المملكة العربية السعودية — الرياض"])}</p>
-              <p>✉️ info@aidis.org.sa • compliance@aidis.org.sa</p>
+              <p>✉️ <a href={`mailto:${contactDetails.email}`} className="hover:text-emerald-700">{contactDetails.email}</a> • <a href={`mailto:${contactDetails.complianceEmail}`} className="hover:text-emerald-700">{contactDetails.complianceEmail}</a></p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-14 flex flex-col justify-between items-center gap-4 border-t border-slate-200 pt-8 text-xs text-slate-500 md:flex-row">
-          <p>© 2026 WAIWIM — With AI We Innovate Medicine. {pick(["All Rights Reserved. NCNP #5421.", "جميع الحقوق محفوظة. ترخيص 5421."])}</p>
+          <p>Copyright © 2026 aimedicine | Powered by <a href={contactDetails.poweredBy.url} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-emerald-700 underline underline-offset-2">{contactDetails.poweredBy.name}</a></p>
           <div className="flex flex-wrap gap-6">
             <span className="hover:text-emerald-700 cursor-pointer">{pick(["Bylaws & Governance Charter", "اللائحة الأساسية وميثاق الحوكمة"])}</span>
             <span className="hover:text-emerald-700 cursor-pointer">{pick(["Conflict of Interest Policy", "سياسة تعارض المصالح"])}</span>

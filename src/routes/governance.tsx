@@ -1,2 +1,2 @@
-import {createFileRoute} from "@tanstack/react-router"; import {GovernancePage} from "@/components/site/pages";
+﻿import {createFileRoute} from "@tanstack/react-router"; import {GovernancePage} from "@/components/site/pages";
 export const Route=createFileRoute("/governance")({head:()=>({meta:[{title:"Governance & Transparency — WAIWIM"},{name:"description",content:"Governance structure, board accountability, policies, finances, and donation transparency."},{property:"og:title",content:"Governance & Transparency — WAIWIM"},{property:"og:description",content:"Accountable leadership and transparent reporting."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:GovernancePage});

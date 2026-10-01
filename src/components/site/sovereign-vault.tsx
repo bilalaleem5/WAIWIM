@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   ShieldCheck, ClipboardCheck, BadgeCheck, Award, ArrowRight, 
@@ -73,18 +73,18 @@ export function SovereignResonanceCore() {
       codeAr: "مراجعة مالية مستقلة",
       titleEn: "Certified Fiduciary Audit Opinions",
       titleAr: "قوائم مالية مستقلة مدققة",
-      authorityEn: "Ernst & Young Chartered Accountants",
-      authorityAr: "إرنست آند يونغ (محاسبون قانونيون)",
+      authorityEn: "Certified Independent Public Accountants (CPA)",
+      authorityAr: "محاسبون قانونيون مستقلون معتمدون",
       indexScore: "Clean Opinion",
       indexLabel: "Audit Opinion",
       badgeColor: "bg-indigo-500/10 text-indigo-800 border-indigo-300",
       accentGlow: "from-indigo-500/20 to-teal-500/10",
       summaryEn: "Quarterly transparent financial statements audited by independent chartered CPA firms ensuring 100% direct patient healthcare allocation.",
-      summaryAr: "إفصاحات مالية دورية مدققة من كبرى مكاتب المحاسبة المستقلة تضمن توجيه كامل أموال التبرعات نحو الرعاية المباشرة.",
+      summaryAr: "إفصاحات مالية دورية مدققة من مكاتب المحاسبة المستقلة المعتمدة تضمن توجيه أموال التبرعات نحو الرعاية المباشرة والأبحاث الطبية.",
       icon: BadgeCheck,
       coords: { x: "72%", y: "42%" },
       metrics: [
-        { label: "Auditing Firm", val: "Ernst & Young" },
+        { label: "Auditing Firm", val: "Independent Certified CPA" },
         { label: "Opinion Type", val: "Unqualified Clean Opinion" },
         { label: "Public Disclosure", val: "100% Transparent" }
       ]

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./language";
 import { cn } from "@/lib/utils";
 import { Sparkles, ArrowRight, Play, RotateCcw } from "lucide-react";

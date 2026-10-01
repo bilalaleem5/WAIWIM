@@ -1,4 +1,4 @@
-import { useState, useRef, type MouseEvent } from "react";
+﻿import { useState, useRef, type MouseEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   ArrowRight, Dna, ShieldCheck, Activity 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   ShieldCheck, ClipboardCheck, BadgeCheck, Award, ArrowRight, 
@@ -76,18 +76,18 @@ export function SovereignGovernanceSection() {
       codeAr: "مراجعة مالية مستقلة",
       taglineEn: "Certified Fiduciary Audit Opinions",
       taglineAr: "قوائم مالية مستقلة مدققة",
-      authorityEn: "Ernst & Young Chartered Accountants",
-      authorityAr: "إرنست آند يونغ (محاسبون قانونيون)",
+      authorityEn: "Certified Independent Public Accountants (CPA)",
+      authorityAr: "محاسبون قانونيون مستقلون معتمدون",
       indexScore: "Clean",
       indexLabelEn: "Audit Opinion",
       indexLabelAr: "رأي المحاسب المستقل",
       summaryEn: "Quarterly transparent financial statements audited by independent chartered CPA firms. Unreserved public accounting ensures that 100% of philanthropic capital reaches direct patient care.",
-      summaryAr: "إفصاحات مالية دورية مدققة من كبرى مكاتب المحاسبة المستقلة، تضمن الشفافية المطلقة وتوجيه كامل أموال التبرعات نحو الرعاية المباشرة والأبحاث الطبية.",
+      summaryAr: "إفصاحات مالية دورية مدققة من مكاتب المحاسبة القانونية المستقلة، تضمن الشفافية المطلقة وتوجيه أموال التبرعات نحو الرعاية المباشرة والأبحاث الطبية.",
       icon: BadgeCheck,
       color: "indigo",
       coords: { x: "58%", y: "24%" },
       metrics: [
-        { labelEn: "Auditor", labelAr: "المراجع المستقل", val: "Ernst & Young" },
+        { labelEn: "Auditor", labelAr: "المراجع المستقل", val: "Independent CPA" },
         { labelEn: "Disclosure", labelAr: "مستوى الإفصاح", val: "100% Public" },
         { labelEn: "Capital Diversion", labelAr: "الانحراف المالي", val: "0.0% Verified" }
       ]

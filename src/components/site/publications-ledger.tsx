@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   FileText, ShieldCheck, CheckCircle2,
@@ -47,14 +47,14 @@ export function PublicationsLedger() {
     {
       id: "DOC-2025-Q4",
       categoryKey: "audit",
-      titleEn: "2025 Annual Fiduciary Audit Report (Ernst & Young)",
-      titleAr: "تقرير القوائم المالية والتدقيق المحاسبي السنوي 2025 (إرنست آند يونغ)",
+      titleEn: "2025 Annual Fiduciary Audit Report (Independent CPA)",
+      titleAr: "تقرير القوائم المالية والتدقيق المحاسبي السنوي 2025 (محاسب قانوني مستقل)",
       categoryEn: "Statutory CPA Audit",
       categoryAr: "تدقيق محاسبي مستقل",
       date: "Q4 2025",
       pages: "64 Pages",
-      issuerEn: "Ernst & Young LLP (SOCPA License #410)",
-      issuerAr: "إرنست آند يونغ للتدقيق المحاسبي (ترخيص سوبا رقم 410)",
+      issuerEn: "Certified Independent Public Accountants (CPA)",
+      issuerAr: "محاسبون قانونيون مستقلون معتمدون (ترخيص الهيئة السعودية للمراجعين)",
       abstractEn: "Independent statutory audit verifying 100% fiduciary integrity, unqualified clean opinion, and zero material accounting weaknesses across all medical device endowment programs.",
       abstractAr: "مراجعة محاسبية مستقلة تؤكد سلامة المركز المالي بنسبة 100%، مع رأي تدقيق نظيف غير متحفظ وخلو القوائم من أي ملاحظات جوهرية.",
       keyFindingsEn: [
@@ -396,9 +396,8 @@ export function PublicationsLedger() {
               <span className="font-bold text-slate-900">{pick(["LEGAL CHARTER:", "الترخيص القانوني:"])}</span>
               <span className="text-emerald-700 font-extrabold">{pick(["NCNP LICENSE #5421", "ترخيص المركز الوطني 5421"])}</span>
             </div>
-            <span className="text-slate-300 hidden sm:inline">|</span>
             <div>
-              <span className="font-bold text-slate-900">{pick(["INDEPENDENT AUDITOR:", "المراجع الخارجي:"])}</span> Ernst & Young Middle East
+              <span className="font-bold text-slate-900">{pick(["INDEPENDENT AUDITOR:", "المراجع الخارجي:"])}</span> {pick(["Certified Independent CPA", "محاسب قانوني مستقل"])}
             </div>
             <span className="text-slate-300 hidden sm:inline">|</span>
             <div>

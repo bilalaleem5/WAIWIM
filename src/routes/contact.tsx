@@ -1,2 +1,2 @@
-import {createFileRoute} from "@tanstack/react-router"; import {ContactPage} from "@/components/site/pages";
+﻿import {createFileRoute} from "@tanstack/react-router"; import {ContactPage} from "@/components/site/pages";
 export const Route=createFileRoute("/contact")({head:()=>({meta:[{title:"Contact Us — WAIWIM"},{name:"description",content:"Contact WAIWIM for research, volunteering, partnerships, programs, media, and general inquiries."},{property:"og:title",content:"Contact WAIWIM — With AI We Innovate Medicine"},{property:"og:description",content:"Connect with our research, volunteer, partnership, and media teams."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:ContactPage});

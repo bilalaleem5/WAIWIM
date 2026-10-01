@@ -1,2 +1,2 @@
-import {createFileRoute} from "@tanstack/react-router"; import {SupportPage} from "@/components/site/pages";
+﻿import {createFileRoute} from "@tanstack/react-router"; import {SupportPage} from "@/components/site/pages";
 export const Route=createFileRoute("/support")({head:()=>({meta:[{title:"Support Our Mission — WAIWIM"},{name:"description",content:"Support transparent research, training, medical equipment, and community health campaigns."},{property:"og:title",content:"Support Our Mission — WAIWIM"},{property:"og:description",content:"Every contribution funds research, innovation, and health impact."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:SupportPage});

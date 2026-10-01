@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+﻿import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Language } from "@/lib/site-content";
 
 type LanguageContextValue = { language: Language; setLanguage: (language: Language) => void; pick: (value: readonly unknown[]) => any };

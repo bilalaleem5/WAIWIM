@@ -1,3 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/site/pages";
 export const Route=createFileRoute("/")({head:()=>({meta:[{title:"WAIWIM — With AI We Innovate Medicine | بالذكاء الاصطناعي نبتكر الدواء"},{name:"description",content:"WAIWIM is a Saudi licensed nonprofit (#5421) advancing health through AI, sovereign drug innovation, research, education, and community impact."},{property:"og:title",content:"WAIWIM — With AI We Innovate Medicine"},{property:"og:description",content:"From possibility to better medicine. Advancing health through artificial intelligence and pharmaceutical innovation."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:HomePage});

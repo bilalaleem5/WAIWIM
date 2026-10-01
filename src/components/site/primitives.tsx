@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+﻿import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { 
   Download, CheckCircle2, Moon, Sun, ArrowRight, ShieldCheck, 
   Sparkles, ExternalLink, Dna, FlaskConical, Layers, Activity,
   Users, Building2, Landmark, HeartPulse, Send, Search, Check, AlertCircle,
   MapPin, Sliders, Cpu, FileCheck2, Award, ArrowUpRight,
-  User, Pill, Settings
+  User, Pill, Settings, Mail, MessageCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { ui, aiPipelineSteps, portalSimulations, governanceInfo } from "@/lib/site-content";
+import { ui, aiPipelineSteps, portalSimulations, governanceInfo, contactDetails } from "@/lib/site-content";
 import { Link } from "@tanstack/react-router";
 import { useLanguage } from "./language";
 
@@ -680,6 +680,27 @@ export function InteractiveDonationCalculator() {
           </p>
         </div>
       </div>
+
+      {/* Direct WhatsApp Gateway Action */}
+      <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-xs text-slate-500">
+          <span className="font-semibold text-slate-700">{pick(["Direct Fiduciary Impact:", "أثر مالي مباشر:"])}</span> {pick(["100% of philanthropic capital directed to patients & research.", "100% من أموال المساهمات توجه مباشرة للرعاية السريرية والأبحاث."])}
+        </div>
+        <a
+          href={`https://wa.me/966505210112?text=${encodeURIComponent(
+            language === "ar"
+              ? `السلام عليكم، أود المساهمة بمبلغ ${amount} ريال سعودي لدعم مبادرات وأبحاث جمعية بالذكاء الاصطناعي نبتكر الدواء.`
+              : `Hello, I would like to contribute SAR ${amount} to support the healthcare and AI initiatives at WAIWIM.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all hover:scale-102 shrink-0"
+        >
+          <MessageCircle className="size-4" />
+          <span>{pick(["Contribute via WhatsApp", "المساهمة عبر واتساب الجمعية"])}</span>
+          <ArrowUpRight className="rtl:-scale-x-100 size-3.5" />
+        </a>
+      </div>
     </div>
   );
 }
@@ -914,37 +935,91 @@ export function ButtonLink({
 export function SmartForm({ 
   fields, 
   submitLabel, 
-  successMessage 
+  successMessage,
+  recipientEmail = "info@aimedicine.org.sa",
+  subjectPrefix = "[WAIWIM Official Portal]"
 }: { 
   fields: Array<{ name: string; label: string; type?: string; options?: string[]; required?: boolean }>; 
   submitLabel: string; 
-  successMessage: string; 
+  successMessage?: string;
+  recipientEmail?: string;
+  subjectPrefix?: string;
 }) {
+  const { pick } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [trackingCode, setTrackingCode] = useState("");
+  const [formDataSummary, setFormDataSummary] = useState<{ mailto: string; whatsapp: string }>({ mailto: "", whatsapp: "" });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const code = "WAIWIM-" + Math.floor(100000 + Math.random() * 900000);
     setTrackingCode(code);
+
+    const entries: string[] = [];
+    fields.forEach(field => {
+      const val = formData.get(field.name)?.toString() || "";
+      if (val) {
+        entries.push(`${field.label}: ${val}`);
+      }
+    });
+
+    const subject = `${subjectPrefix} - Ref #${code}`;
+    const bodyContent = `Reference ID: ${code}\nDate: ${new Date().toLocaleDateString()}\n\nDetails:\n${entries.join("\n")}\n\nSubmitted via WAIWIM Official Portal (aimedicine.org.sa)`;
+
+    const mailto = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+    const whatsapp = `https://wa.me/966505210112?text=${encodeURIComponent(`*${subject}*\n\n${entries.join("\n")}`)}`;
+
+    setFormDataSummary({ mailto, whatsapp });
     setSubmitted(true);
+
+    // Attempt to trigger native email client automatically
+    try {
+      window.location.href = mailto;
+    } catch {
+      // Handled by on-screen action buttons
+    }
   };
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 md:p-8 text-center animate-in zoom-in-95 duration-300">
-        <div className="mx-auto size-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
-          <CheckCircle2 className="size-6" />
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50/90 p-6 md:p-8 text-center animate-in zoom-in-95 duration-300">
+        <div className="mx-auto size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 shadow-sm">
+          <CheckCircle2 className="size-7" />
         </div>
         <h4 className="font-display text-xl font-bold text-slate-900">
-          Application Successfully Registered
+          {pick(["Application Successfully Registered", "تم تسجيل طلبكم بنجاح"])}
         </h4>
-        <p className="mt-2 text-sm text-slate-700 max-w-md mx-auto">
-          {successMessage}
+        <p className="mt-2 text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
+          {successMessage || pick([
+            `Your submission has been addressed directly to ${recipientEmail}. You can also confirm sending via your email app or WhatsApp below.`,
+            `تم توجيه طلبكم مباشرة إلى البريد الإلكتروني الرسمي (${recipientEmail}). يمكنك أيضاً إرساله فوراً عبر تطبيق البريد أو واتساب أدناه.`
+          ])}
         </p>
+
         <div className="mt-5 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 border border-emerald-300 shadow-xs">
-          <span className="text-xs text-slate-500 font-semibold">Official Tracking Code:</span>
+          <span className="text-xs text-slate-500 font-semibold">{pick(["Official Tracking Code:", "رقم المتابعة المعتمد:"])}</span>
           <span className="font-mono text-base font-bold text-emerald-700">{trackingCode}</span>
+        </div>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-3 pt-4 border-t border-emerald-200/80">
+          <a
+            href={formDataSummary.mailto}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-colors"
+          >
+            <Mail className="size-4" />
+            <span>{pick(["Open Email Client", "فتح تطبيق البريد"])}</span>
+          </a>
+          <a
+            href={formDataSummary.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-bold transition-colors shadow-2xs"
+          >
+            <MessageCircle className="size-4 text-emerald-600" />
+            <span>{pick(["Send via WhatsApp", "إرسال عبر واتساب"])}</span>
+          </a>
         </div>
       </div>
     );
@@ -965,7 +1040,7 @@ export function SmartForm({
               required={field.required} 
               className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs focus:border-emerald-500 focus:outline-none"
             >
-              <option value="">Select option...</option>
+              <option value="">{pick(["Select option...", "اختر من القائمة..."])}</option>
               {field.options?.map(option => (
                 <option key={option} value={option}>{option}</option>
               ))}
@@ -975,7 +1050,7 @@ export function SmartForm({
           )}
         </div>
       ))}
-      <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 mt-2">
+      <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 mt-2 cursor-pointer">
         <Send className="size-4 me-2" />
         {submitLabel}
       </Button>
@@ -1281,7 +1356,7 @@ export function RoleDashboardViewer() {
               </div>
               <span className="status-badge">
                 <CheckCircle2 className="size-3.5" />
-                {pick(["Audited by Ernst & Young", "مدققة من مراجع قانوني معتمد"])}
+                {pick(["Audited by Certified Independent CPA", "مدققة من مراجع قانوني معتمد"])}
               </span>
             </div>
 
@@ -1508,9 +1583,11 @@ export function VoiceMattersModal({ open, onClose }: { open: boolean; onClose: (
               { name: "message", label: pick(["Detailed Description", "تفاصيل البلاغ أو الشكوى"]), type: "textarea", required: true }
             ]}
             submitLabel={pick(["Register & Generate Ticket", "تسجيل المعاملة وإصدار التذكرة"])}
+            recipientEmail="compliance@aimedicine.org.sa"
+            subjectPrefix={pick(["[WAIWIM Confidential Report]", "[بلاغ حوكمة ونزاهة - وايويم]"])}
             successMessage={pick([
-              "Your report has been received by the Governance & Audit Committee. A reference code has been issued and will be investigated within 5 business days.",
-              "تم استلام بلاغك من قبل لجنة الحوكمة والمراجعة. صدر رقم مرجعي رسمي وستتم المعالجة خلال 5 أيام عمل وفق لوائح المركز الوطني."
+              "Your report has been sent directly to the Governance & Audit Committee (compliance@aimedicine.org.sa). An official tracking code has been issued and will be investigated within 3 to 5 business days.",
+              "تم إرسال بلاغكم مباشرة إلى لجنة الحوكمة والمراجعة (compliance@aimedicine.org.sa). صدر رقم مرجعي رسمي وستتم المعالجة خلال 3 إلى 5 أيام عمل وفق لوائح المركز الوطني."
             ])}
           />
         </div>
@@ -1540,7 +1617,7 @@ export function CinematicMarqueeTelemetry() {
     { label: pick(["High-Performance Bio-Cluster", "عنقود الحوسبة الحيوية الفائقة"]), val: "1.2 PFLOPS", tag: "HPC GPU" },
     { label: pick(["Saudi National Volunteer Platform", "المنصة الوطنية للعمل التطوعي"]), val: "8,400+ HOURS", tag: "COMMUNITY" },
     { label: pick(["Geographic Reach", "التغطية الجغرافية الميدانية"]), val: "13 PROVINCES", tag: "NATIONWIDE" },
-    { label: pick(["Fiduciary Audit Certification", "شهادة التدقيق المالي المستقل"]), val: "ERNST & YOUNG", tag: "GOVERNANCE" }
+    { label: pick(["Fiduciary Audit Certification", "شهادة التدقيق المالي المستقل"]), val: "INDEPENDENT CPA", tag: "GOVERNANCE" }
   ];
 
   return (

@@ -1,0 +1,435 @@
+﻿Absolutely. For the AI for Drug Innovation Society, I would update the website in English around a Governance + Impact + Innovation model rather than treating it as a conventional nonprofit website.
+1. New Website Positioning
+AI for Drug Innovation Society
+Research • Innovation • Health Impact • Community
+The website should communicate three things immediately:
+We are a legally governed nonprofit organization.
+We operate measurable health and innovation programs.
+We are transparent to donors, volunteers, partners, and the public.
+The site should therefore become a digital governance and impact platform, not only an informational website.
+2. New Main Navigation
+I recommend:
+HomeAbout UsGovernance &amp; TransparencyPrograms &amp; InitiativesImpactResearch &amp; InnovationStrategic PartnershipsVolunteerSupport UsReports &amp; PublicationsContact
+At the top right:
+Search | AR / EN | Login
+The Login area leads to role-based dashboards.
+3. Homepage
+Hero Section
+Advancing Health Through Artificial Intelligence and Innovation
+AI for Drug Innovation Society is a nonprofit organization working at the intersection of artificial intelligence, pharmaceutical innovation, health technology, research, education, and community impact.
+From research to innovation. From innovation to health impact.
+Buttons:
+Explore Our InitiativesPartner With Us
+4. Four Core Areas
+Instead of putting dozens of initiatives on the homepage, use four institutional pillars:
+AI &amp; Drug Innovation
+Advancing artificial intelligence applications in pharmaceutical research and drug discovery.
+Health Innovation
+Developing and supporting innovative solutions that improve healthcare access and delivery.
+Research &amp; Education
+Building scientific capacity through research, training, workshops, and knowledge exchange.
+Community Health Impact
+Connecting technology, volunteers, partners, and resources to address real health needs.
+5. “Our Initiatives”
+This should become one of the most important sections.
+Featured Initiatives
+Hakeem Medical Equipment Bank
+A platform for collecting, assessing, maintaining or calibrating when needed, registering, allocating, transporting, and delivering medical equipment and supplies to people and organizations in need.
+Thousand Miles Step
+A capacity-building and innovation program supporting the development of future capabilities in AI-driven drug discovery and pharmaceutical innovation.
+AI Drug Discovery Training Unit
+Specialized education and training in artificial intelligence applications in drug discovery and pharmaceutical sciences.
+AI for Drug Innovation Hackathon
+A platform for students, researchers, innovators, developers, and healthcare professionals to develop technology-driven solutions to pharmaceutical and healthcare challenges.
+Dawā’i Bi-Tariqati — Personalized Medication
+An initiative focused on personalized approaches to medication and patient-centered pharmaceutical care.
+6. Every Initiative Gets Its Own Impact Page
+This is important.
+Instead of simply saying:
+“We have this initiative.”
+Every initiative should have a standardized structure:
+Initiative Profile
+ProblemWhat problem are we addressing?
+SolutionWhat are we doing?
+Target BeneficiariesWho benefits?
+PartnersWho supports the initiative?
+FundingHow is it funded?
+ActivitiesWhat has been implemented?
+OutputsWhat has been delivered?
+OutcomesWhat changed?
+ImpactWhat measurable difference has been achieved?
+KPIs
+Current Status
+Planned
+In Development
+Pilot
+Active
+Completed
+Reports &amp; Evidence
+This prevents the website from mixing proposed projects with active projects.
+7. Governance &amp; Transparency
+This should be a major top-level page.
+Governance &amp; Transparency
+Legal &amp; Institutional Information
+Legal name
+Registration information
+Supervisory authority
+Establishment date
+Legal form
+Approved bylaws
+Relevant licenses and approvals
+Governance Structure
+General Assembly
+↓
+Board of Directors
+↓
+Board Committees
+↓
+Executive Management
+↓
+Programs &amp; Initiatives
+The exact terminology should reflect whether the Society is legally registered as an association or another nonprofit form.
+8. Board of Directors
+Create a dedicated page:
+Board of Directors
+For each board member:
+Name
+Position
+Professional background
+Qualifications
+Relevant experience
+Committee membership
+Board term
+Only publish information that is appropriate and legally permissible.
+The governance page should also include:
+Board Responsibilities
+Board Meetings
+Attendance
+Board Decisions
+Committees
+Conflict-of-Interest Disclosure
+Annual Governance Report
+9. Board Committees
+Depending on the Society's formally approved structure, the website can present committees such as:
+Audit &amp; Risk Committee
+Financial oversight, internal controls, audit, risk.
+Governance &amp; Nominations Committee
+Governance, board composition, succession, policies.
+Programs &amp; Impact Committee
+Program performance and social impact.
+Research &amp; Innovation Committee
+Scientific research, innovation, publications, and partnerships.
+The website should only identify committees that have actually been established by the competent authority.
+10. Conflict of Interest
+Create a dedicated section:
+Conflict of Interest
+It should explain:
+Conflict-of-interest policy
+Annual disclosure
+Disclosure before relevant decisions
+Recording conflicts in meeting minutes
+Recusal from discussion/voting where applicable
+Conflict management process
+Internally, this should become a Conflict of Interest Register.
+11. Financial Transparency
+Financial Transparency
+Show, where approved and legally publishable:
+Annual financial statements
+Annual reports
+Budget
+Revenue
+Expenditure
+Program expenditure
+Restricted funding
+Unrestricted funding
+External audit
+Financial policies
+Significant financial developments
+The principle should be:
+Show where resources come from, where they go, and what they achieve.
+12. Donation Transparency
+Instead of simply having:
+Donate Now
+Use:
+Support Our Mission
+Each fundraising campaign should show:
+Campaign GoalAmount RaisedAmount UsedRemaining AmountPurposeBeneficiariesCampaign PeriodImpactReport
+Donation functionality itself should only be enabled through the legally authorized mechanism applicable to the Society and the specific campaign.
+13. Donor Dashboard
+This should be a secure private portal.
+Donor Dashboard
+My Contributions
+Total contributions
+Contribution history
+Receipts
+My Supported Programs
+Program
+Funding
+Status
+Milestones
+Financial Tracking
+Committed
+Received
+Spent
+Remaining
+Impact
+Beneficiaries reached
+Activities completed
+Outcomes
+Impact indicators
+Reports
+Financial reports
+Program reports
+Impact reports
+The donor should be able to follow:
+Funding → Activities → Outputs → Outcomes → Impact
+14. Volunteer Dashboard
+Volunteer Portal
+My Profile
+Skills
+Expertise
+Interests
+Opportunities
+Available opportunities
+Applications
+Assignments
+My Activities
+Current tasks
+Completed activities
+Attendance
+Volunteer Hours
+Training
+Courses
+Certifications
+Impact
+Programs supported
+Beneficiaries reached
+Contributions
+Recognition
+Certificates
+Achievements
+15. Strategic Partner Dashboard
+This is particularly important for your Society because of the planned relationships with universities, pharmaceutical companies, technology companies, healthcare organizations, and government institutions.
+Strategic Partner Portal
+Partnership Overview
+MOU/Agreement
+Start date
+End date
+Strategic objectives
+Joint Programs
+Workstreams
+Partner Commitments
+Funding / In-Kind Contributions
+KPIs
+Baseline
+Target
+Current performance
+Research Collaboration
+Publications
+Training
+Events
+Risks &amp; Issues
+Action Tracker
+Partnership Renewal
+This transforms a partnership from a PDF agreement into a managed institutional relationship.
+16. Impact Dashboard
+Create a public:
+Our Impact
+with verified numbers only.
+For example:
+Programs
+Beneficiaries
+Volunteers
+Volunteer Hours
+Strategic Partners
+Researchers
+Students Trained
+Medical Equipment Delivered
+Research Projects
+Training Programs
+Then show:
+Input → Activity → Output → Outcome → Impact
+This is much more credible than simply displaying large numbers.
+17. Research &amp; Innovation
+This section should reflect the actual identity of the Society.
+Research Areas
+AI-driven drug discovery
+Pharmaceutical AI
+Health AI
+Digital health
+Personalized medicine
+Pharmaceutical supply chains
+Medical technology
+Data-driven healthcare
+Innovation ecosystems
+Then:
+Research Projects
+Publications
+Preprints
+Research Partnerships
+Conferences
+Innovation Challenges
+Intellectual Property
+18. Reports &amp; Publications
+Create a centralized:
+Reports &amp; Publications Center
+Categories:
+Annual Reports
+Financial Reports
+Governance Reports
+Impact Reports
+Program Reports
+Research Publications
+Policy Papers
+White Papers
+Conference Reports
+Evaluation Reports
+This becomes the Society's institutional memory.
+19. Complaints &amp; Feedback
+Add:
+Your Voice Matters
+Options:
+Submit a Complaint
+Report a Concern
+Provide Feedback
+Submit a Suggestion
+Ask a Question
+Each submission receives a reference number.
+Internally:
+Received → Assigned → Investigated → Resolved → Closed
+with an audit trail.
+20. Governance Dashboard — Internal
+This is the most important internal system.
+Governance Dashboard
+Compliance
+NCNP requirements
+Regulatory obligations
+Licenses
+Required disclosures
+Board
+Members
+Terms
+Meetings
+Attendance
+Decisions
+Committees
+Policies
+Policy
+Version
+Approval date
+Review date
+Responsible person
+Conflict of Interest
+Risk Register
+Financial Controls
+Audit
+Donations Compliance
+Beneficial Ownership
+Complaints
+Data Protection
+Volunteer Governance
+Corrective Actions
+Each item should have:
+Requirement → Evidence → Owner → Due Date → Status
+21. Board Portal
+The Board should have its own secure environment.
+Board Dashboard
+Strategic Scorecard
+Financial Position
+Program Performance
+Impact
+Risk
+Compliance
+Audit
+Executive Performance
+Board Decisions
+Meeting Calendar
+Board Papers
+Minutes
+Committee Reports
+Policy Approvals
+Conflict Disclosures
+Action Items
+The Board should be able to see the organization's entire institutional position in one screen.
+22. One Integrated Digital Architecture
+I would not build five separate systems.
+Build one platform:
+Society Governance &amp; Impact Platform
+with role-based access:
+SOCIETY PLATFORM
+│
+┌──────────────────┼──────────────────┐
+│                  │                  │
+PUBLIC WEBSITE     SECURE PORTAL       ADMIN SYSTEM
+│
+┌────────────┬──────┼──────┬────────────┐
+│            │             │            │
+DONOR       VOLUNTEER     PARTNER       BOARD
+All of them use the same underlying data.
+23. Master Data
+The system should have one institutional database containing:
+Programs
+Initiatives
+Activities
+Beneficiaries
+Donors
+Volunteers
+Partners
+Grants
+Budgets
+KPIs
+Outcomes
+Risks
+Policies
+Board decisions
+Documents
+Conflicts of interest
+Compliance requirements
+Research projects
+Publications
+Events
+Intellectual property
+This creates a single source of truth.
+24. International + Saudi Governance Model
+The website should combine:
+Saudi Governance
+Compliance
+Transparency &amp; Disclosure
+Financial Safety
+Board Governance
+Donation Compliance
+Beneficial Ownership
+Volunteer Governance
+Policies &amp; Controls
+with international nonprofit practices:
+International Governance
+Mission &amp; Purpose
+Board Accountability
+Risk Management
+Impact Measurement
+Financial Transparency
+Stakeholder Engagement
+Ethical Fundraising
+Conflict Management
+Organizational Effectiveness
+25. The New Homepage Structure
+I would ultimately build the homepage like this:
+01 — Hero
+AI for Drug Innovation Society
+02 — Who We Are
+03 — Our Four Areas
+AI &amp; Drug InnovationHealth InnovationResearch &amp; EducationCommunity Health Impact
+04 — Featured Initiatives
+05 — Impact Dashboard
+06 — Research &amp; Innovation
+07 — Strategic Partnerships
+08 — Volunteer
+09 — Governance &amp; Transparency
+10 — Reports
+11 — Support Our Mission
+12 — Contact
+Most important change
+The Society's website should communicate:
+We don't just announce initiatives. We govern them, measure them, report them, and demonstrate their impact.
+That is the central principle I would use for the redesign.
+And I would make the governance architecture and the actual Society initiatives the foundation of the new website, rather than adding governance as an isolated page afterward.

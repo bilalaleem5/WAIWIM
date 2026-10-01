@@ -1,4 +1,4 @@
-export type Language = "en" | "ar";
+﻿export type Language = "en" | "ar";
 
 export const navItems = [
   ["Home", "الرئيسية", "/"],
@@ -331,8 +331,320 @@ export const aiPipelineSteps = [
   }
 ] as const;
 
+export const boardMembers = [
+  {
+    name: ["Dr. Abdulmohsen Hameed Alrohaimi", "د. عبد المحسن حميد الرحيمي"],
+    role: ["Chairman of the Board", "رئيس مجلس الإدارة"],
+    credentials: [
+      "Chairman of the Board of Directors. Leading the national strategic vision of AI-driven medicine and healthcare innovation in Saudi Arabia.",
+      "رئيس مجلس إدارة الجمعية، يقود التوجه الاستراتيجي لابتكار الأدوية بالذكاء الاصطناعي وتطوير قطاع الرعاية الصحية بالمملكة."
+    ]
+  },
+  {
+    name: ["Eng. Aljohrah Essam Alsahn", "مهندس. الجوهرة عصام الصحن"],
+    role: ["Vice Chairman", "نائب رئيس مجلس الإدارة"],
+    credentials: [
+      "Vice Chairman of the Board. Guiding technology execution, digital transformation, and strategic institutional partnerships.",
+      "نائب رئيس مجلس الإدارة، تقود مسارات التحول الرقمي وتطوير الحلول التقنية المتقدمة والشراكات المؤسسية."
+    ]
+  },
+  {
+    name: ["Dr. Hamoud Hleil Alshammari", "د. حمود هليل الشمري"],
+    role: ["Board Member", "عضو مجلس الإدارة"],
+    credentials: [
+      "Board Member. Expert in clinical governance, healthcare delivery models, and medical quality standards.",
+      "عضو مجلس الإدارة، خبير في الحوكمة السريرية، ونماذج الرعاية الصحية المتقدمة، ومعايير الجودة الطبية."
+    ]
+  },
+  {
+    name: ["Dr. Fayez Suliman M. Alharbi", "د. فايز سليمان الحربي"],
+    role: ["Board Member", "عضو مجلس الإدارة"],
+    credentials: [
+      "Board Member. Specialized in pharmaceutical innovation, drug development protocols, and academic collaboration.",
+      "عضو مجلس الإدارة، متخصص في ابتكار الأدوية وتطوير بروتوكولات الأبحاث الدوائية والشراكات الأكاديمية."
+    ]
+  },
+  {
+    name: ["Dr. Abdullah Salem Alrashood", "د. عبدالله سالم الرشود"],
+    role: ["Board Member", "عضو مجلس الإدارة"],
+    credentials: [
+      "Board Member. Focusing on clinical research oversight, bioethics, and national health capability building.",
+      "عضو مجلس الإدارة، يركز على الإشراف على الأبحاث السريرية، والأخلاقيات الحيوية، وبناء القدرات الوطنية."
+    ]
+  }
+] as const;
+
+export const coreValues = [
+  {
+    id: "quality",
+    title: ["Excellence in quality", "التميز في الجودة"],
+    description: [
+      "Commitment to providing high quality services.",
+      "التزام بتقديم خدمات عالية الجودة."
+    ]
+  },
+  {
+    id: "creativity",
+    title: ["Creativity and innovation", "الإبداع والابتكار"],
+    description: [
+      "Develop innovative solutions to improve healthcare.",
+      "تطوير حلول مبتكرة لتحسين الرعاية الصحية."
+    ]
+  },
+  {
+    id: "transparency",
+    title: ["Transparency and accountability", "الشفافية والمساءلة"],
+    description: [
+      "Ensuring transparency in all operations.",
+      "ضمان الشفافية في جميع العمليات."
+    ]
+  },
+  {
+    id: "cooperation",
+    title: ["Academic and industrial cooperation", "التعاون الأكاديمي والصناعي"],
+    description: [
+      "Involving universities and research institutions.",
+      "إشراك الجامعات والمؤسسات البحثية."
+    ]
+  }
+] as const;
+
+export const institutionalGoals = [
+  {
+    id: "capabilities",
+    title: [
+      "Build national capabilities in AI to advance the healthcare sector.",
+      "بناء القدرات الوطنية في مجال الذكاء الاصطناعي لتعزيز قطاع الرعاية الصحية."
+    ]
+  },
+  {
+    id: "studies",
+    title: [
+      "Foster innovative studies utilizing artificial intelligence.",
+      "دعم الدراسات المبتكرة باستخدام الذكاء الاصطناعي."
+    ]
+  },
+  {
+    id: "leadership",
+    title: [
+      "Lead pharmaceutical innovation in the Kingdom.",
+      "قيادة الابتكار الدوائي في المملكة."
+    ]
+  },
+  {
+    id: "outcomes",
+    title: [
+      "Improve healthcare outcomes through innovative solutions.",
+      "تحسين نتائج الرعاية الصحية من خلال حلول مبتكرة."
+    ]
+  }
+] as const;
+
+export const visionAndMission = {
+  vision: [
+    "To become a leading center in the development of innovative medicines using artificial intelligence.",
+    "مركز رائد في تطوير الأدوية المبتكرة باستخدام الذكاء الاصطناعي."
+  ],
+  mission: [
+    "Empower innovation in drug development, AI-driven solutions for enhanced healthcare, Improve the quality of healthcare in the Kingdom.",
+    "تمكين الابتكار في تطوير الأدوية من خلال حلول الذكاء الاصطناعي، وتعزيز جودة الرعاية الصحية في المملكة."
+  ]
+} as const;
+
+export const proposedStrategicInitiatives = [
+  {
+    num: "1",
+    title: ["AI-Powered Drug Development", "تطوير الأدوية المدعومة بالذكاء الاصطناعي"],
+    description: [
+      "Accelerate discovery and development of new therapies.",
+      "تسريع الاكتشاف وتطوير الأدوية."
+    ]
+  },
+  {
+    num: "2",
+    title: ["National Pharmaceutical Database", "إنشاء قاعدة بيانات وطنية للأدوية"],
+    description: [
+      "Improve drug safety and efficacy by tracking usage and outcomes.",
+      "تحسين الوصول إلى المعلومات الدوائية وأمان وفعالية الدواء وتتبع الاستخدام والنتائج."
+    ]
+  },
+  {
+    num: "3",
+    title: ["Streamlined Clinical Trials", "تحسين وتسريع التجارب السريرية"],
+    description: [
+      "Optimize trial design and recruitment for faster results.",
+      "تطوير بروتوكولات أسرع وأكثر كفاءة لتسريع النتائج وتصميم التجارب السريرية."
+    ]
+  },
+  {
+    num: "4",
+    title: ["AI Training Programs", "تقديم برامج تدريبية متخصصة في الذكاء الاصطناعي"],
+    description: [
+      "Equip healthcare professionals with the skills to leverage AI tools.",
+      "بناء وتأهيل الكوادر الصحية وتزويدها بالمهارات اللازمة للتعامل مع أدوات وتقنيات الذكاء الاصطناعي."
+    ]
+  }
+] as const;
+
+export const strategyPillars = [
+  {
+    num: "1",
+    title: ["Partnerships", "الشراكات"],
+    description: [
+      "Strengthening cooperation between the public and private sectors.",
+      "تعزيز التعاون بين القطاعين العام والخاص."
+    ]
+  },
+  {
+    num: "2",
+    title: ["Accelerated Approvals", "التسريع الرقمي"],
+    description: [
+      "AI-powered solutions for faster decision-making.",
+      "تطبيق حلول الذكاء الاصطناعي لتسريع الموافقات والقرارات التنظيمية."
+    ]
+  },
+  {
+    num: "3",
+    title: ["Global Collaboration", "التعاون الدولي"],
+    description: [
+      "Boosting innovation through shared knowledge.",
+      "تعزيز التعاون الدولي في مجال ابتكار الأدوية وتبادل المعرفة والخبرات."
+    ]
+  },
+  {
+    num: "4",
+    title: ["Specialized skills", "مهارات متخصصة"],
+    description: [
+      "Training and upskilling for a skilled workforce.",
+      "تطوير مهارات وطنية متخصصة لبناء قوة عاملة مؤهلة في الرعاية الصحية والتقنية."
+    ]
+  }
+] as const;
+
+export const proposedWorkTeams = [
+  {
+    id: "tech",
+    title: ["Digital and Information Technologies Team", "فريق التقنيات الرقمية والمعلومات"],
+    description: [
+      "Ensure efficient operation of systems Technology.",
+      "ضمان التشغيل الفعال للأنظمة التقنية."
+    ]
+  },
+  {
+    id: "hr",
+    title: ["Human Resources Management Team", "فريق إدارة الموارد البشرية"],
+    description: [
+      "Dedicated to ensuring a positive work environment.",
+      "مُكرس لضمان بيئة عمل إيجابية."
+    ]
+  },
+  {
+    id: "pr",
+    title: ["Partnerships and Public Relations Team", "فريق الشراكات والعلاقات العامة"],
+    description: [
+      "Building strong relationships with partners.",
+      "بناء علاقات قوية ومستدامة مع الشركاء."
+    ]
+  },
+  {
+    id: "rd",
+    title: ["Research and Development Team", "فريق البحث والتطوير"],
+    description: [
+      "Dedicated to innovating and developing solutions Technologies.",
+      "مُكرس لابتكار الحلول وتطوير التقنيات الدوائية."
+    ]
+  },
+  {
+    id: "ops",
+    title: ["Operations management team", "فريق إدارة العمليات"],
+    description: [
+      "Dedicated to ensuring operational efficiency.",
+      "مُكرس لضمان الكفاءة والفاعلية في التشغيل."
+    ]
+  }
+] as const;
+
+export const marketAndImpactData = {
+  marketSize: {
+    headline: [
+      "Global AI Healthcare Market Size $45 Billion Market Projection 2026",
+      "توقعات بلوغ سوق الذكاء الاصطناعي في الرعاية الصحية 45 مليار دولار بحلول 2026"
+    ],
+    description: [
+      "Significant growth in this sector, attracting new investments and accelerating technological adoption globally and in Saudi Arabia.",
+      "نمو متسارع في هذا القطاع واستقطاب استثمارات جديدة تعزز مكانة المملكة كمركز إقليمي للابتكار الصحي."
+    ],
+    saudiPotential: [
+      "The potential of the Kingdom of Saudi Arabia",
+      "إمكانات ومكانة المملكة العربية السعودية الرائدة"
+    ]
+  },
+  challenges: [
+    {
+      challenge: ["Shortage of specialized talent", "نقص الكوادر المتخصصة"],
+      solution: ["Intensive training programs for local talents", "برامج تدريبية مكثفة للكفاءات والكوادر الوطنية"]
+    },
+    {
+      challenge: ["The need to accelerate regulatory approvals", "الحاجة لتسريع الموافقات التنظيمية والقرارات"],
+      solution: ["Strengthening partnerships with international organizations & regulatory AI tools", "تعزيز الشراكات مع المنظمات الدولية وأتمتة دراسات الاعتماد"]
+    }
+  ],
+  expectedOutcomes: [
+    {
+      title: ["Less reliance on imported medicines", "تقليل الاعتماد على الأدوية المستوردة"],
+      description: ["Promoting self-sufficiency in health care.", "تعزيز الاكتفاء الذاتي والأمن الدوائي في الرعاية الصحية."]
+    },
+    {
+      title: ["Faster access to innovative treatments", "وصول أسرع للعلاجات المبتكرة"],
+      description: ["Accelerating access to new and effective treatments.", "تسريع إيصال العلاجات الجديدة والفعالة للمرضى."]
+    },
+    {
+      title: ["Job opportunities specialized in the field of artificial intelligence", "فرص عمل متخصصة في مجال الذكاء الاصطناعي"],
+      description: ["Providing new job opportunities in the field of advanced technology.", "توفير وظائف جديدة ومتقدمة في مجالات التقنية والرعاية الصحية الحديثة."]
+    }
+  ],
+  financialSustainability: [
+    {
+      title: ["Developing training programs", "تطوير البرامج التدريبية والاستشارات"],
+      description: ["Research services to generate revenue.", "تقديم خدمات بحثية وتدريبية تخصصية لتوليد عوائد مستدامة."]
+    },
+    {
+      title: ["Fundraising", "تنمية الموارد والشراكات"],
+      description: ["Involving strategic partners, philanthropic endowments, and corporate sponsors.", "إشراك الشركاء الاستراتيجيين والأوقاف الصحية ورعاة المسؤولية الاجتماعية."]
+    },
+    {
+      title: ["Business Models", "نماذج الأعمال"],
+      description: ["Relying on innovation, technology transfer, and sustainable non-profit solutions.", "الاعتماد على الابتكار ونقل التقنية وتطوير حلول ريادية مستدامة."]
+    }
+  ]
+} as const;
+
+export const contactDetails = {
+  phone: "+966 50 521 0112",
+  phoneDisplay: "+966 50 521 0112",
+  whatsappUrl: "https://wa.me/966505210112",
+  email: "info@aimedicine.org.sa",
+  complianceEmail: "compliance@aimedicine.org.sa",
+  websiteUrl: "https://aimedicine.org.sa",
+  poweredBy: {
+    name: "businessbridges.net",
+    url: "https://businessbridges.net/"
+  },
+  urgentNote: [
+    "For urgent inquiries and direct communication via WhatsApp",
+    "للاستفسارات العاجلة والتواصل المباشر عبر واتساب"
+  ],
+  startChat: [
+    "Start Chat",
+    "بدء المحادثة"
+  ]
+} as const;
+
 export const governanceInfo = {
-  legalName: ["WAIWIM — With AI We Innovate Medicine", "وايويم — بالذكاء الاصطناعي نبتكر الدواء"],
+  legalName: [
+    "With Artificial Intelligence We Innovate Medicine (WAIWIM)",
+    "جمعية بالذكاء الاصطناعي نبتكر الدواء"
+  ],
   legalForm: ["Nonprofit Scientific & Health Association", "جمعية أهلية صحية وعلمية غير ربحية"],
   supervisoryAuthority: ["National Center for Non-Profit Sector (NCNP)", "المركز الوطني لتنمية القطاع غير الربحي"],
   sectorSupervision: ["Ministry of Health / Saudi Vision 2030 Health Ecosystem", "وزارة الصحة / منظومة التحول الصحي لرؤية 2030"],
@@ -340,6 +652,33 @@ export const governanceInfo = {
   complianceScore: ["98.8% NCNP Audit Rating", "تقييم امتثال 98.8% وفق معايير المركز الوطني"],
   financialYear: ["January 1 – December 31", "1 يناير – 31 ديسمبر"],
   externalAuditor: ["Certified Independent Public Accountants (CPA)", "مراجع حسابات خارجي مستقل ومعتمد"],
+  boardMembers: boardMembers,
+  coreValues: coreValues,
+  goals: institutionalGoals,
+  visionAndMission: visionAndMission,
+  governancePillars: [
+    {
+      title: ["Financial Sustainability", "الاستدامة المالية"],
+      description: [
+        "Secure financial resources through partnerships and donations.",
+        "تأمين الموارد المالية من خلال الشراكات والتبرعات والأوقاف."
+      ]
+    },
+    {
+      title: ["Compliance with laws", "الامتثال للقوانين"],
+      description: [
+        "Adherence to relevant laws and regulations.",
+        "الالتزام الكامل بالأنظمة واللوائح والتعليمات الصادرة من الجهات الإشرافية."
+      ]
+    },
+    {
+      title: ["Transparency and accountability", "الشفافية والمساءلة"],
+      description: [
+        "Open communication and accountability in all operations.",
+        "التواصل المفتوح والمساءلة والنزاهة في كافة العمليات المؤسسية."
+      ]
+    }
+  ],
   committees: [
     {
       name: ["Audit & Risk Committee", "لجنة المراجعة والمخاطر"],
@@ -375,6 +714,7 @@ export const governanceInfo = {
     }
   ]
 };
+
 
 export const portalSimulations = {
   donor: {

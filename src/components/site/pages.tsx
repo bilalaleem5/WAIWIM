@@ -6,7 +6,7 @@ import {
   GraduationCap, HandHeart, HeartPulse, Landmark, Lightbulb, Microscope, 
   Network, ShieldCheck, Stethoscope, Users, Workflow, Sparkles, AlertCircle,
   TrendingUp, Download, Eye, ChevronRight, Layers, Award, BarChart3, Cpu, CheckCircle2,
-  FileCheck2, Sliders
+  FileCheck2, Sliders, Target, Compass, Briefcase, MessageCircle, Phone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/ai-pharma-lab.jpg";
@@ -15,7 +15,10 @@ import workshopImage from "@/assets/innovation-workshop.jpg";
 import researchImage from "@/assets/research-scientist.jpg";
 import { 
   initiatives, fourPillars, pageIntro, reports, ui, 
-  donationCampaigns, governanceInfo, portalSimulations 
+  donationCampaigns, governanceInfo, portalSimulations,
+  boardMembers, coreValues, institutionalGoals, visionAndMission,
+  proposedStrategicInitiatives, strategyPillars, proposedWorkTeams,
+  marketAndImpactData, contactDetails
 } from "@/lib/site-content";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "./language";
@@ -220,10 +223,7 @@ export function AboutPage() {
                   {pick(["Our Vision", "رؤيتنا"])}
                 </h3>
                 <p className="mt-4 text-slate-600 leading-relaxed font-normal text-base">
-                  {pick([
-                    "To be the premier regional platform pioneering ethical artificial intelligence in pharmaceutical discovery, transforming health technology into equitable, life-saving impact across Saudi Arabia and the global scientific community.",
-                    "أن نكون المنصة الإقليمية الرائدة في قيادة تطبيقات الذكاء الاصطناعي الأخلاقي لاكتشاف الأدوية، وتحويل الابتكار التقني إلى أثر صحي عادل ومستدام ينقذ الأرواح في المملكة والعالم."
-                  ])}
+                  {pick(visionAndMission.vision)}
                 </p>
               </div>
 
@@ -246,10 +246,7 @@ export function AboutPage() {
                   {pick(["Our Mission", "رسالتنا"])}
                 </h3>
                 <p className="mt-4 text-slate-600 leading-relaxed font-normal text-base">
-                  {pick([
-                    "To accelerate pharmaceutical innovation through cutting-edge AI computational models, govern health and medical device banking programs with institutional rigor, and cultivate Saudi research capabilities for a healthier tomorrow.",
-                    "تسريع الابتكار الدوائي عبر نماذج الذكاء الاصطناعي الحوسبية المتقدمة، وحوكمة برامج الدعم الصحي وبنوك الأجهزة الطبية بمعايير صارمة، وبناء الكفاءات البحثية الوطنية لغدٍ صحي واعد."
-                  ])}
+                  {pick(visionAndMission.mission)}
                 </p>
               </div>
 
@@ -262,7 +259,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      {/* 03 — CORE INSTITUTIONAL VALUES (6 Sleek Value Cards) */}
+      {/* 03 — CORE INSTITUTIONAL VALUES (4 Verified Values from Governance Charter) */}
       <Section className="py-16 md:py-24">
         <div className="site-container">
           <SectionHeading 
@@ -270,34 +267,27 @@ export function AboutPage() {
             badge={pick(["Ethical Foundation", "المبادئ التوجيهية"])}
             title={pick(["Our Core Institutional Values", "قيمنا المؤسسية الحاكمة"])} 
             subtitle={pick([
-              "The bedrock principles guiding our researchers, board committees, and field volunteers across every initiative.",
-              "المبادئ الأساسية التي تحكم أبحاثنا، وقرارات مجالسنا، وعملياتنا الميدانية في مختلف المبادرات."
+              "The 4 fundamental values established by the Board of Directors that guide our research and community engagement.",
+              "القيم الأربع الأساسية المعتمدة من مجلس الإدارة التي توجه أبحاثنا ومبادراتنا المجتمعية."
             ])}
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10">
-            {[
-              [ShieldCheck, "Integrity & Ethics", "النزاهة والأمانة العلمية", "We uphold the highest ethical standards in biological research, fiduciary management, and artificial intelligence safety.", "نلتزم بأعلى معايير النزاهة في البحث الحيوي، والائتمان المالي، وسلامة خوارزميات الذكاء الاصطناعي."],
-              [FileText, "Radical Transparency", "الشفافية المطلقة", "We disclose all governance decisions, independent CPA financial audits, and project evaluations to the public.", "نفصح بكل وضوح عن قرارات المجلس، والتقارير المالية المدققة، ونتائج تقييم البرامج للجميع."],
-              [Lightbulb, "Pioneering Innovation", "الابتكار الريادي", "We fearlessly push scientific boundaries, bringing computational biotechnology from theoretical models to clinical use.", "نتجاوز النماذج التقليدية لنقل التقنية الحيوية الحوسبية من الإطار النظري إلى التطبيق السريري الملموس."],
-              [Network, "Multidisciplinary Collaboration", "الشراكة والتكامل", "We unite computer scientists, pharmacologists, health clinicians, and community volunteers into one cohesive force.", "نوحد جهود علماء الحاسب، وخبراء الصيدلة، والممارسين الصحيين، والمتطوعين في منظومة عمل واحدة."],
-              [HeartPulse, "Measurable Impact", "الأثر القابل للقياس", "We don't merely launch initiatives; we verify and report real changes in patient health and scientific sovereignty.", "لا نكتفي بإطلاق المبادرات؛ بل نقيس ونوثق أثرها الحقيقي على صحة الإنسان والسيادة العلمية."],
-              [Users, "Health Equity & Inclusion", "العدالة والشمول الصحي", "We ensure that life-saving medical devices and personalized medications reach the most vulnerable communities.", "نضمن وصول الأجهزة الطبية المنقذة للأرواح والأدوية الدقيقة إلى الفئات الأشد احتياجاً في كافة المناطق."]
-            ].map(([Icon, en, ar, de, da], i) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+            {coreValues.map((val, i) => (
               <div 
                 key={i} 
                 className="p-7 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="size-11 rounded-xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-4">
-                    <Icon className="size-5" />
+                  <div className="size-11 rounded-xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-4 font-mono font-bold text-sm">
+                    0{i + 1}
                   </div>
-                  <h4 className="font-display text-lg font-bold text-slate-900">{pick([en, ar])}</h4>
-                  <p className="mt-2.5 text-sm text-slate-600 leading-relaxed font-normal">{pick([de, da])}</p>
+                  <h4 className="font-display text-lg font-bold text-slate-900">{pick(val.title)}</h4>
+                  <p className="mt-2.5 text-sm text-slate-600 leading-relaxed font-normal">{pick(val.description)}</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
                   <CheckCircle2 className="size-3" />
-                  <span>{pick(["Institutional Standard", "معيار مؤسسي ملزم"])}</span>
+                  <span>{pick(["Board Approved Principle", "مبدأ معتمد من المجلس"])}</span>
                 </div>
               </div>
             ))}
@@ -305,8 +295,120 @@ export function AboutPage() {
         </div>
       </Section>
 
-      {/* 04 — OFFICIAL LEGAL REGISTRY & ACCREDITATION */}
+      {/* 04 — STRATEGIC INSTITUTIONAL GOALS */}
       <Section tone="mist" className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Strategic Roadmap", "الأهداف المؤسسية"])}
+            title={pick(["Our Strategic Goals", "الأهداف الاستراتيجية المعتمدة"])} 
+            subtitle={pick([
+              "Four core institutional pillars aligned with Saudi Vision 2030 and the National Biotechnology Strategy.",
+              "أربعة أهداف استراتيجية رئيسية متوافقة مع رؤية المملكة 2030 والاستراتيجية الوطنية للتقنية الحيوية."
+            ])}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+            {institutionalGoals.map((goal, i) => (
+              <div key={i} className="p-7 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="size-10 rounded-xl bg-amber-50 border border-amber-200/80 text-amber-700 flex items-center justify-center mb-4 font-mono font-bold text-xs">
+                    GOAL 0{i + 1}
+                  </div>
+                  <h4 className="font-display text-base font-bold text-slate-900 leading-snug">{pick(goal.title)}</h4>
+                  <p className="mt-2.5 text-xs text-slate-600 leading-relaxed">{pick(goal.description)}</p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
+                  <Target className="size-3" />
+                  <span>{pick(["Vision 2030 KPI", "مؤشر أداء 2030"])}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* 05 — GOVERNING BOARD OF DIRECTORS */}
+      <Section className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Leadership & Governance", "القيادة والحوكمة"])}
+            title={pick(["Board of Directors", "مجلس الإدارة"])} 
+            subtitle={pick([
+              "The distinguished governing board leading WAIWIM under official NCNP license #5421.",
+              "نخبة من القيادات الأكاديمية والصحية تدير الجمعية رسمياً بموجب ترخيص المركز الوطني رقم 5421."
+            ])}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10 max-w-5xl mx-auto">
+            {boardMembers.map((member, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="size-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4 font-bold text-base font-display">
+                    {member.name[0].charAt(0)}
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block mb-2">
+                    {pick(member.role)}
+                  </span>
+                  <h4 className="font-display text-lg font-bold text-slate-900 leading-tight">
+                    {pick(member.name)}
+                  </h4>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    {pick(member.bio)}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
+                  <ShieldCheck className="size-3.5 text-emerald-600" />
+                  <span>{pick(["Verified NCNP Board Member", "عضو معتمد بالمركز الوطني"])}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* 06 — SPECIALIZED WORK TEAMS */}
+      <Section tone="mist" className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Operational Committees", "فرق العمل المتخصصة"])}
+            title={pick(["Specialized Operational Teams", "فرق العمل التنفيذية المقترحة"])} 
+            subtitle={pick([
+              "Multidisciplinary committees driving research, computational infrastructure, partnerships, and training.",
+              "لجان متعددة التخصصات تقود الأبحاث، والبنية الحوسبية، والشراكات المؤسسية، والتدريب."
+            ])}
+          />
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-10">
+            {proposedWorkTeams.map((team, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="size-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold font-mono">
+                      {i + 1}
+                    </span>
+                    <h4 className="font-display text-base font-bold text-slate-900">
+                      {pick(team.name)}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    {pick(team.scope)}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1.5">
+                  <Briefcase className="size-3" />
+                  <span>{pick(["Active Operational Scope", "نطاق عمل تنفيذي"])}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* 07 — OFFICIAL LEGAL REGISTRY & ACCREDITATION */}
+      <Section className="py-16 md:py-24">
         <div className="site-container">
           <SectionHeading 
             badge={pick(["Regulatory Adherence", "الامتثال والاعتماد الرسمي"])}
@@ -338,14 +440,24 @@ export function AboutPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-200">
-              <div className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+              <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
                 <ShieldCheck className="size-4 text-emerald-600" />
-                <span>{pick(["Verified by the National Center for Non-Profit Sector (NCNP)", "موثق لدى المركز الوطني لتنمية القطاع غير الربحي"])}</span>
+                <span>{pick(["Officially Licensed by the National Center for Non-Profit Sector (NCNP #5421)", "مرخصة وموثقة رسمياً لدى المركز الوطني لتنمية القطاع غير الربحي (ترخيص رقم 5421)"])}</span>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <DownloadButton label={pick(["Download Approved Bylaws", "تحميل اللائحة الأساسية المعتمدة"])} />
-                <DownloadButton label={pick(["Official NCNP License Certificate", "شهادة ترخيص المركز الوطني"])} />
-              </div>
+              <a
+                href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                  language === "ar"
+                    ? "السلام عليكم، أود طلب نسخة رسمية معتمدة من اللائحة الأساسية وشهادة الترخيص لجمعية بالذكاء الاصطناعي نبتكر الدواء (وايويم)."
+                    : "Hello, I would like to request an official copy of WAIWIM's approved bylaws and license certificate."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs"
+              >
+                <MessageCircle className="size-4 text-emerald-600" />
+                <span>{pick(["Request Official Documents", "طلب الوثائق الرسمية المعتمدة"])}</span>
+                <ArrowUpRight className="rtl:-scale-x-100 size-3.5" />
+              </a>
             </div>
           </div>
         </div>
@@ -358,7 +470,7 @@ export function AboutPage() {
    3. PROGRAMS & INITIATIVES PAGE
    ========================================================================= */
 export function ProgramsPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.programs;
   const [filter, setFilter] = useState("All");
 
@@ -511,20 +623,124 @@ export function ProgramsPage() {
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-200">
-                    <span className="text-xs font-bold text-slate-600 block mb-3">
-                      {pick(["Available Audit Documents", "الوثائق والتقارير المتاحة"])}
+                  <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
+                    <span className="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                      <CheckCircle2 className="size-3.5 text-emerald-600" />
+                      {pick(["NCNP Audited Initiative", "مبادرة محكومة ومعتمدة"])}
                     </span>
-                    <div className="flex flex-wrap gap-2">
-                      {item.reportsAvailable.map((rep, idx) => (
-                        <DownloadButton key={idx} label={rep} />
-                      ))}
-                    </div>
+                    <a
+                      href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                        language === "ar"
+                          ? `السلام عليكم، أود الاستفسار عن مبادرة: (${item.title[1]}) التابعة لجمعية بالذكاء الاصطناعي نبتكر الدواء.`
+                          : `Hello, I would like to inquire about the initiative: "${item.title[0]}" at WAIWIM.`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs"
+                    >
+                      <MessageCircle className="size-3.5 text-emerald-600" />
+                      <span>{pick(["Inquire via WhatsApp", "استفسر عبر واتساب"])}</span>
+                      <ArrowUpRight className="rtl:-scale-x-100 size-3" />
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* Strategic Initiatives Roadmap (Client Verified Document) */}
+      <Section tone="mist" className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Strategic Pipeline", "المبادرات الاستراتيجية"])}
+            title={pick(["Proposed Strategic Initiatives Roadmap", "المبادرات الاستراتيجية المقترحة"])} 
+            subtitle={pick([
+              "Flagship initiatives advancing pharmaceutical innovation, medical device circularity, and biotechnology accelerators.",
+              "مبادرات رائدة لتعزيز الابتكار الدوائي، وتدوير الأجهزة الطبية، ومسرعات التقنية الحيوية."
+            ])}
+          />
+
+          <div className="grid gap-6 md:grid-cols-2 mt-10">
+            {proposedStrategicInitiatives.map((init, i) => (
+              <div key={i} className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                      INITIATIVE 0{i + 1}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-500 font-mono">
+                      {pick(["Strategic Priority", "أولوية استراتيجية"])}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-slate-900 leading-snug">
+                    {pick(init.name)}
+                  </h3>
+                  <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
+                    {pick(init.description)}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs text-emerald-700 font-semibold flex items-center gap-1.5">
+                    <Target className="size-3.5" />
+                    {pick(["Vision 2030 Health Objective", "مستهدف صحي 2030"])}
+                  </span>
+                  <a
+                    href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                      language === "ar"
+                        ? `السلام عليكم، أود الاستفسار والمشاركة في: (${init.name[1]}) لدى جمعية بالذكاء الاصطناعي نبتكر الدواء.`
+                        : `Hello, I would like to inquire about: "${init.name[0]}" at WAIWIM.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1"
+                  >
+                    <span>{pick(["Collaborate", "طلب مشاركة"])}</span>
+                    <ArrowUpRight className="rtl:-scale-x-100 size-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Strategic Pillars (4 Pillars from Document) */}
+      <Section className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Institutional Framework", "الركائز الاستراتيجية"])}
+            title={pick(["Strategic Pillars of the Society", "ركائز استراتيجية الجمعية"])} 
+            subtitle={pick([
+              "The four foundational pillars defining our operational mandates, partnerships, and scientific research.",
+              "الركائز الأربع الحاكمة لعمليات الجمعية وشراكاتها المؤسسية وأبحاثها الصيدلانية."
+            ])}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+            {strategyPillars.map((pillar, i) => (
+              <div key={i} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="size-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4 font-mono font-bold text-xs">
+                    PILLAR 0{i + 1}
+                  </div>
+                  <h4 className="font-display text-base font-bold text-slate-900 leading-snug">
+                    {pick(pillar.title)}
+                  </h4>
+                  <p className="mt-2.5 text-xs text-slate-600 leading-relaxed font-normal">
+                    {pick(pillar.description)}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
+                  <Compass className="size-3" />
+                  <span>{pick(["Core Strategy Pillar", "ركيزة استراتيجية"])}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
     </>
@@ -535,7 +751,7 @@ export function ProgramsPage() {
    4. GOVERNANCE & TRANSPARENCY PAGE
    ========================================================================= */
 export function GovernancePage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.governance;
 
   return (
@@ -668,7 +884,20 @@ export function GovernancePage() {
               </div>
             </div>
             <div className="mt-8 pt-6 border-t border-slate-200">
-              <DownloadButton label={pick(["Download Conflict of Interest Policy", "تحميل ميثاق سياسة تعارض المصالح"])} />
+              <a
+                href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                  language === "ar"
+                    ? "السلام عليكم، أود طلب نسخة رسمية من سياسة تعارض المصالح لجمعية بالذكاء الاصطناعي نبتكر الدواء."
+                    : "Hello, I would like to request an official copy of WAIWIM's Conflict of Interest Policy."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs"
+              >
+                <MessageCircle className="size-3.5 text-emerald-600" />
+                <span>{pick(["Request Official Policy Document", "طلب وثيقة السياسة المعتمدة"])}</span>
+                <ArrowUpRight className="rtl:-scale-x-100 size-3" />
+              </a>
             </div>
           </div>
 
@@ -731,10 +960,63 @@ export function GovernancePage() {
             <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5">
                 <CheckCircle2 className="size-3.5 text-emerald-600" />
-                {pick(["Certified by Independent CPA", "مدقق ومصادق عليه محاسبياً"])}
+                <span>{pick(["Certified by Independent CPA", "مدقق ومصادق عليه محاسبياً"])}</span>
               </span>
-              <DownloadButton label={pick(["Download 2025 Financial Statements", "تحميل القوائم المالية المدققة 2025"])} />
+              <a
+                href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                  language === "ar"
+                    ? "السلام عليكم، أود طلب نسخة رسمية من القوائم المالية المعتمدة لجمعية بالذكاء الاصطناعي نبتكر الدواء."
+                    : "Hello, I would like to request an official copy of WAIWIM's certified financial statements."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs"
+              >
+                <MessageCircle className="size-3.5 text-emerald-600" />
+                <span>{pick(["Request Certified Statements", "طلب القوائم المعتمدة"])}</span>
+                <ArrowUpRight className="rtl:-scale-x-100 size-3" />
+              </a>
             </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* 04 — GOVERNING BOARD ROSTER */}
+      <Section tone="mist" className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Fiduciary Leadership", "مجلس الإدارة المعتمد"])}
+            title={pick(["Governing Board of Directors", "أعضاء مجلس الإدارة والقيادة المؤسسية"])} 
+            subtitle={pick([
+              "The elected fiduciaries accountable to the General Assembly and the National Center for Non-Profit Sector (NCNP #5421).",
+              "المسؤولون التنظيميون المنتخبون أمام الجمعية العمومية والمركز الوطني لتنمية القطاع غير الربحي (ترخيص 5421)."
+            ])}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10 max-w-5xl mx-auto">
+            {boardMembers.map((member, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="size-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4 font-bold text-base font-display">
+                    {member.name[0].charAt(0)}
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block mb-2">
+                    {pick(member.role)}
+                  </span>
+                  <h4 className="font-display text-lg font-bold text-slate-900 leading-tight">
+                    {pick(member.name)}
+                  </h4>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    {pick(member.bio)}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-semibold text-slate-500">
+                  <ShieldCheck className="size-3.5 text-emerald-600" />
+                  <span>{pick(["Verified NCNP Board Member", "عضو معتمد بالمركز الوطني"])}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
@@ -874,7 +1156,7 @@ export function ImpactPage() {
    6. RESEARCH & ACCELERATOR PAGE
    ========================================================================= */
 export function ResearchPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.research;
 
   return (
@@ -929,7 +1211,20 @@ export function ResearchPage() {
                 <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl px-5 h-11 shadow-sm transition-all hover:scale-102">
                   <Link to="/contact">{pick(["Apply for Next Cohort", "التقديم على الدفعة القادمة"])}</Link>
                 </Button>
-                <DownloadButton label={pick(["Download Accelerator Prospectus", "تحميل دليل المسرعة الاستثماري"])} />
+                <a
+                  href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                    language === "ar"
+                      ? "السلام عليكم، أود الاستفسار عن دليل مسرعة الابتكار الدوائي وبرنامج الدفعات القادمة لدى جمعية بالذكاء الاصطناعي نبتكر الدواء."
+                      : "Hello, I would like to inquire about the AI Drug Innovation Accelerator prospectus at WAIWIM."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs h-11"
+                >
+                  <MessageCircle className="size-4 text-emerald-600" />
+                  <span>{pick(["Inquire via WhatsApp", "طلب الدليل عبر واتساب"])}</span>
+                  <ArrowUpRight className="rtl:-scale-x-100 size-3.5" />
+                </a>
               </div>
             </div>
 
@@ -948,6 +1243,74 @@ export function ResearchPage() {
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">{desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Global Market Projections ($45B by 2030) from Document */}
+      <Section className="py-16 md:py-24">
+        <div className="site-container">
+          <SectionHeading 
+            align="center"
+            badge={pick(["Market Horizon", "أفق السوق العالمي"])}
+            title={pick(["Global AI Drug Discovery Market Outlook", "حجم وأفق سوق اكتشاف الأدوية بالذكاء الاصطناعي"])} 
+            subtitle={pick([
+              "Verified global projections: $45 Billion valuation by 2030 with a 25-30% Compound Annual Growth Rate.",
+              "بيانات السوق الموثقة: وصول القيمة إلى 45 مليار دولار بحلول 2030 بمعدل نمو سنوي مركب 25-30%."
+            ])}
+          />
+
+          <div className="grid gap-6 sm:grid-cols-3 mt-10">
+            <div className="p-8 rounded-[28px] bg-emerald-950 text-white shadow-xl flex flex-col justify-between">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">
+                  {pick(["Market Valuation", "القيمة السوقية المتوقعة"])}
+                </span>
+                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-white block">
+                  {marketAndImpactData.globalMarketSize.valuation}
+                </strong>
+                <p className="mt-4 text-xs text-emerald-200 leading-relaxed font-normal">
+                  {pick(marketAndImpactData.globalMarketSize.forecast)}
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-emerald-800/80 text-[11px] font-mono text-emerald-300">
+                CAGR: {marketAndImpactData.globalMarketSize.growthRate}
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-amber-700 font-bold block mb-2">
+                  {pick(["Timeline Compression", "تسريع الجداول الزمنية"])}
+                </span>
+                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
+                  {marketAndImpactData.globalMarketSize.timelineReduction}
+                </strong>
+                <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
+                  {pick(["Reduction in initial pharmaceutical target discovery and candidate optimization cycles.", "تقليص زمن مراحل الاستكشاف الأولي وتطوير المركبات الدوائية الواعدة."])}
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
+                {pick(["Virtual Molecular Screening", "الفحص الجزيئي الافتراضي"])}
+              </div>
+            </div>
+
+            <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs flex flex-col justify-between">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-teal-700 font-bold block mb-2">
+                  {pick(["Capital Efficiency", "كفاءة الإنفاق البحثي"])}
+                </span>
+                <strong className="font-display text-4xl sm:text-5xl font-extrabold text-slate-900 block">
+                  {marketAndImpactData.globalMarketSize.costReduction}
+                </strong>
+                <p className="mt-4 text-xs text-slate-600 leading-relaxed font-normal">
+                  {pick(["Reduction in preclinical development cost through precision in silico screening.", "خفض تكاليف مراحل ما قبل التجارب السريرية عبر النمذجة الحاسوبية الدقيقة."])}
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-semibold text-emerald-700">
+                {pick(["SFDA Preclinical Alignment", "تكامل ما قبل السريري"])}
+              </div>
             </div>
           </div>
         </div>
@@ -1033,102 +1396,7 @@ export function PartnershipsPage() {
               "قدّم مقترح الشراكة المؤسسي لجهتك. ستقوم لجنة الشراكات بالتواصل معكم خلال 3 أيام عمل."
             ])}
           />
-          <div className="mt-8 p-8 md:p-10 rounded-[28px] bg-white border border-slate-200 shadow-sm">
-            <SmartForm 
-              fields={[
-                { name: "orgName", label: pick(["Organization Name", "اسم الجهة أو المؤسسة"]), required: true },
-                { name: "orgType", label: pick(["Organization Type", "نوع الجهة"]), type: "select", options: ["University / Research Chair", "Specialist Hospital / Medical Center", "Government Agency", "Pharmaceutical Manufacturer", "Philanthropic Foundation"], required: true },
-                { name: "contactName", label: pick(["Contact Person & Title", "اسم المسؤول والصفة الوظيفية"]), required: true },
-                { name: "email", label: pick(["Official Email", "البريد الإلكتروني الرسمي"]), type: "email", required: true },
-                { name: "proposal", label: pick(["Partnership Scope & Objectives", "نطاق الشراكة المقترحة والأهداف المشتركة"]), type: "textarea", required: true }
-              ]}
-              submitLabel={pick(["Submit Partnership Request", "إرسال طلب الشراكة"])}
-            />
-          </div>
-        </div>
-      </Section>
-    </>
-  );
-}
-
-/* =========================================================================
-   8. VOLUNTEER IMPACT PORTAL PAGE
-   ========================================================================= */
-export function VolunteerPage() {
-  const { pick } = useLanguage();
-  const intro = pageIntro.volunteer;
-
-  return (
-    <>
-      <PageHero 
-        eyebrow={pick(["National Volunteerism", "العمل التطوعي الوطني التخصصي"])}
-        title={pick(intro[0])} 
-        subtitle={pick(intro[1])} 
-      >
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          {[
-            { label: pick(["National Platform Synced", "ربط مباشر بالمنصة الوطنية"]), icon: ShieldCheck },
-            { label: pick(["Verified Hours Certificate", "شهادات ساعات معتمدة"]), icon: Award },
-            { label: pick(["Clinical & Tech Tracks", "مسارات صحية وتقنية"]), icon: BrainCircuit }
-          ].map((item, idx) => (
-            <div 
-              key={idx} 
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-50 text-slate-700 border border-slate-200/90 shadow-2xs"
-            >
-              <item.icon className="size-3.5 text-emerald-600 shrink-0" />
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </PageHero>
-
-      <Section className="py-16 md:py-24">
-        <SectionHeading 
-          align="center"
-          badge={pick(["Specialized Opportunities", "الفرص التطوعية التخصصية"])}
-          title={pick(["High-Impact Volunteer Tracks", "مسارات التطوع التخصصية"])} 
-          subtitle={pick([
-            "All volunteer hours are officially verified and documented on the Saudi National Volunteer Portal.",
-            "توثق كافة الساعات والمهام رسمياً عبر المنصة الوطنية للعمل التطوعي لوزارة الموارد البشرية."
-          ])}
-        />
-
-        <div className="grid gap-6 md:grid-cols-3 mt-10">
-          {[
-            [BrainCircuit, "AI & Machine Learning Researchers", "باحثو الذكاء الاصطناعي", "Mentor students, evaluate computational drug models, and assist in hackathon judging."],
-            [Stethoscope, "Clinical Pharmacists & Physicians", "الصيادلة السريريون والأطباء", "Guide patient eligibility for Hakeem equipment bank and review pharmacogenomics datasets."],
-            [FlaskConical, "Biomedical Calibration Engineers", "مهندسو المعايرة والأجهزة الطبية", "Perform safety inspections and recalibration protocols on life-support equipment."]
-          ].map(([Icon, en, ar, desc], i) => (
-            <div key={i} className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
-              <div>
-                <div className="size-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 text-emerald-700 flex items-center justify-center mb-5">
-                  <Icon className="size-6" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-slate-900">{pick([en, ar])}</h3>
-                <p className="text-sm text-slate-600 mt-3 leading-relaxed font-normal">{desc}</p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
-                <CheckCircle2 className="size-3.5" />
-                <span>{pick(["National Accreditation Active", "اعتماد الساعات متاح"])}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section tone="mist" className="py-16 md:py-24">
-        <div className="max-w-2xl mx-auto">
-          <SectionHeading 
-            align="center"
-            badge={pick(["Volunteer Registration", "التسجيل التطوعي"])}
-            title={pick(["Join Our Specialized Volunteer Network", "انضم لشبكة الخبراء والمتطوعين"])} 
-            subtitle={pick([
-              "Register your credentials to receive specialized callouts for clinical initiatives and hackathons.",
-              "سجل بياناتك وخبراتك لتصلك الفرص التخصصية في المبادرات الصحية والهاكاثونات العلمية."
-            ])}
-          />
-          <div className="mt-8 p-8 md:p-10 rounded-[28px] bg-white border border-slate-200 shadow-sm">
-            <SmartForm 
+          <SmartForm 
               fields={[
                 { name: "fullName", label: pick(["Full Name", "الاسم الكامل"]), required: true },
                 { name: "nationalId", label: pick(["National ID / Iqama (For Portal Sync)", "رقم الهوية أو الإقامة (للتوثيق في المنصة الوطنية)"]), required: true },
@@ -1138,8 +1406,13 @@ export function VolunteerPage() {
                 { name: "notes", label: pick(["Brief Professional Background", "نبذة عن الخبرات والمهارات"]), type: "textarea", required: false }
               ]}
               submitLabel={pick(["Register as Volunteer", "تسجيل طلب التطوع"])}
+              recipientEmail="info@aimedicine.org.sa"
+              subjectPrefix={pick(["[Volunteer Registration]", "[طلب تسجيل متطوع]"])}
+              successMessage={pick([
+                "Your volunteer registration has been submitted. Our team will review your application and sync your profile with the Saudi National Volunteer Portal.",
+                "تم تسجيل طلب التطوع بنجاح. سيقوم فريقنا بمراجعة المؤهلات والتنسيق لربط ساعاتكم بالمنصة الوطنية للعمل التطوعي."
+              ])}
             />
-          </div>
         </div>
       </Section>
     </>
@@ -1149,6 +1422,73 @@ export function VolunteerPage() {
 /* =========================================================================
    9. SUPPORT US / FIDUCIARY GIVING PAGE
    ========================================================================= */
+function CampaignCard({ camp }: { camp: typeof donationCampaigns[number] }) {
+  const { language, pick } = useLanguage();
+  const [selectedAmt, setSelectedAmt] = useState(500);
+  const pct = Math.round((camp.raisedAmount / camp.targetAmount) * 100);
+
+  const whatsappMsg = language === "ar"
+    ? `السلام عليكم، أود المساهمة بمبلغ ${selectedAmt} ريال في حملة: (${camp.title[1]}) التابعة لجمعية بالذكاء الاصطناعي نبتكر الدواء.`
+    : `Hello, I would like to contribute SAR ${selectedAmt} to the campaign: "${camp.title[0]}" at WAIWIM.`;
+
+  return (
+    <div className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
+      <div>
+        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block mb-4">
+          {pick(camp.tag)}
+        </span>
+        <h3 className="font-display text-xl font-bold text-slate-900">
+          {pick(camp.title)}
+        </h3>
+        <p className="text-sm text-slate-600 mt-3 leading-relaxed font-normal">
+          {pick(camp.description)}
+        </p>
+        <div className="mt-6 space-y-2 p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+          <div className="flex justify-between text-xs font-semibold text-slate-800">
+            <span>{pick(["Raised: ", "المجموع: "])}﷼{camp.raisedAmount.toLocaleString()}</span>
+            <span>{pick(["Target: ", "الهدف: "])}﷼{camp.targetAmount.toLocaleString()}</span>
+          </div>
+          <ProgressBar value={pct} />
+          <span className="text-[11px] font-mono text-emerald-700 block text-end font-bold">{pct}% Funded</span>
+        </div>
+      </div>
+
+      <div className="mt-8 pt-5 border-t border-slate-200">
+        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
+          {pick(["Select Contribution Amount", "اختر مبلغ المساهمة"])}
+        </span>
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          {[100, 500, 1000].map(amt => (
+            <button 
+              key={amt} 
+              type="button"
+              onClick={() => setSelectedAmt(amt)}
+              className={cn(
+                "p-2 text-center rounded-xl border font-mono font-bold text-xs transition-colors cursor-pointer",
+                selectedAmt === amt
+                  ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
+                  : "bg-slate-50 border-slate-200 text-slate-700 hover:border-emerald-500 hover:text-emerald-700"
+              )}
+            >
+              ﷼{amt}
+            </button>
+          ))}
+        </div>
+        <a 
+          href={`https://wa.me/966505210112?text=${encodeURIComponent(whatsappMsg)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl h-11 text-xs shadow-sm transition-all hover:scale-101"
+        >
+          <MessageCircle className="size-4" />
+          <span>{pick(["Contribute via Authorized Gateway", "المساهمة عبر المنفذ النظامي المعتمد"])}</span>
+          <ArrowUpRight className="rtl:-scale-x-100 size-3.5" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function SupportPage() {
   const { pick } = useLanguage();
   const intro = pageIntro.support;
@@ -1156,15 +1496,15 @@ export function SupportPage() {
   return (
     <>
       <PageHero 
-        eyebrow={pick(["Fiduciary Giving", "العطاء والوقف الصحي"])}
+        eyebrow={pick(["Fiduciary Stewardship", "المساهمة والأثر الصحي"])}
         title={pick(intro[0])} 
         subtitle={pick(intro[1])} 
       >
         <div className="mt-8 flex flex-wrap items-center gap-3">
           {[
-            { label: pick(["Official License #5421", "ترخيص رسمي رقم 5421"]), icon: ShieldCheck },
-            { label: pick(["Authorized NCNP Channels", "منافذ نظامية معتمدة"]), icon: Landmark },
-            { label: pick(["Audited Impact Reports", "تقارير أثر دورية مدققة"]), icon: FileCheck2 }
+            { label: pick(["Zakat Certified Programs", "برامج زكاة معتمدة"]), icon: ShieldCheck },
+            { label: pick(["100% Direct Program Utilization", "100% توجيه مباشر للمستفيدين"]), icon: CheckCircle2 },
+            { label: pick(["NCNP Audited Campaigns", "حملات مدققة بالمركز الوطني"]), icon: Award }
           ].map((item, idx) => (
             <div 
               key={idx} 
@@ -1177,7 +1517,13 @@ export function SupportPage() {
         </div>
       </PageHero>
 
+      {/* Interactive Impact Giving Calculator */}
       <Section className="py-16 md:py-24">
+        <InteractiveDonationCalculator />
+      </Section>
+
+      {/* Active Governed Campaigns */}
+      <Section tone="mist" className="py-16 md:py-24">
         <SectionHeading 
           align="center"
           badge={pick(["Verified Campaigns", "الحملات المعتمدة"])}
@@ -1188,45 +1534,9 @@ export function SupportPage() {
           ])}
         />
         <div className="grid gap-6 md:grid-cols-3 mt-10">
-          {donationCampaigns.map(camp => {
-            const pct = Math.round((camp.raisedAmount / camp.targetAmount) * 100);
-            return (
-              <div key={camp.id} className="p-8 rounded-[28px] bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
-                <div>
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block mb-4">
-                    {pick(camp.tag)}
-                  </span>
-                  <h3 className="font-display text-xl font-bold text-slate-900">
-                    {pick(camp.title)}
-                  </h3>
-                  <p className="text-sm text-slate-600 mt-3 leading-relaxed font-normal">
-                    {pick(camp.description)}
-                  </p>
-                  <div className="mt-6 space-y-2 p-4 rounded-xl bg-slate-50 border border-slate-200/70">
-                    <div className="flex justify-between text-xs font-semibold text-slate-800">
-                      <span>{pick(["Raised: ", "المجموع: "])}﷼{camp.raisedAmount.toLocaleString()}</span>
-                      <span>{pick(["Target: ", "الهدف: "])}﷼{camp.targetAmount.toLocaleString()}</span>
-                    </div>
-                    <ProgressBar value={pct} />
-                    <span className="text-[11px] font-mono text-emerald-700 block text-end font-bold">{pct}% Funded</span>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-5 border-t border-slate-200">
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {["﷼100", "﷼500", "﷼1,000"].map(amt => (
-                      <button key={amt} className="p-2 text-center rounded-xl border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 font-mono font-bold text-xs bg-slate-50 transition-colors cursor-pointer">
-                        {amt}
-                      </button>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl h-11 text-xs shadow-sm">
-                    {pick(["Contribute via Authorized Gateway", "المساهمة عبر المنفذ النظامي المعتمد"])}
-                  </Button>
-                </div>
-              </div>
-            );
-          })}
+          {donationCampaigns.map(camp => (
+            <CampaignCard key={camp.id} camp={camp} />
+          ))}
         </div>
       </Section>
     </>
@@ -1237,7 +1547,7 @@ export function SupportPage() {
    10. REPORTS & PUBLICATIONS PAGE
    ========================================================================= */
 export function ReportsPage() {
-  const { pick } = useLanguage();
+  const { language, pick } = useLanguage();
   const intro = pageIntro.reports;
   const [filter, setFilter] = useState("All");
 
@@ -1246,7 +1556,7 @@ export function ReportsPage() {
     "Impact Reports", 
     "Financial Statements", 
     "Governance Reports", 
-    "Research Publications",
+    "Research Publications", 
     "Program Reports"
   ];
 
@@ -1315,7 +1625,19 @@ export function ReportsPage() {
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-mono text-slate-500">{r.filesize} • {r.pages}</span>
-                <DownloadButton label={pick(["Download PDF", "تحميل النسخة المعتمدة"])} />
+                <a
+                  href={`https://wa.me/966505210112?text=${encodeURIComponent(
+                    language === "ar"
+                      ? `السلام عليكم، أود طلب نسخة رسمية معتمدة من تقرير: "${r.title[1]}" الصادر عن جمعية بالذكاء الاصطناعي نبتكر الدواء.`
+                      : `Hello, I would like to request an official copy of the report: "${r.title[0]}" from WAIWIM.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors shadow-2xs"
+                >
+                  <MessageCircle className="size-3.5 text-emerald-600" />
+                  <span>{pick(["Request Official Copy", "طلب نسخة رسمية"])}</span>
+                </a>
               </div>
             </div>
           ))}
@@ -1370,17 +1692,44 @@ export function ContactPage() {
             />
 
             <div className="space-y-4 my-8">
+              {/* WhatsApp Direct Line */}
+              <div className="p-6 rounded-2xl border border-emerald-300 bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/40 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+                    <MessageCircle className="size-5 text-emerald-600" />
+                    <span>{contactDetails.phoneDisplay}</span>
+                  </div>
+                  <p className="text-xs text-slate-600 mt-1">
+                    {pick(contactDetails.urgentNote)}
+                  </p>
+                </div>
+                <a
+                  href={contactDetails.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors shadow-xs shrink-0"
+                >
+                  <MessageCircle className="size-4" />
+                  <span>{pick(contactDetails.startChat)}</span>
+                  <ArrowUpRight className="rtl:-scale-x-100 size-3.5" />
+                </a>
+              </div>
+
               <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-2xs">
                 <strong className="text-slate-900 block text-sm font-bold">{pick(["Headquarters Address", "مقر الجمعية الرئيسي"])}</strong>
                 <span className="text-xs text-slate-600 block mt-1">Riyadh, Kingdom of Saudi Arabia</span>
               </div>
               <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-2xs">
                 <strong className="text-slate-900 block text-sm font-bold">{pick(["General Inquiries", "البريد الإلكتروني العام"])}</strong>
-                <span className="text-xs font-mono text-emerald-700 block mt-1">info@aidis.org.sa</span>
+                <a href={`mailto:${contactDetails.email}`} className="text-xs font-mono text-emerald-700 block mt-1 hover:underline">
+                  {contactDetails.email}
+                </a>
               </div>
               <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-2xs">
                 <strong className="text-slate-900 block text-sm font-bold">{pick(["Governance & Compliance", "إدارة الحوكمة والامتثال"])}</strong>
-                <span className="text-xs font-mono text-emerald-700 block mt-1">compliance@aidis.org.sa</span>
+                <a href={`mailto:${contactDetails.complianceEmail}`} className="text-xs font-mono text-emerald-700 block mt-1 hover:underline">
+                  {contactDetails.complianceEmail}
+                </a>
               </div>
             </div>
 
@@ -1422,6 +1771,12 @@ export function ContactPage() {
                   { name: "message", label: pick(["Message Content", "نص الرسالة"]), type: "textarea", required: true }
                 ]}
                 submitLabel={pick(["Send Message", "إرسال الرسالة"])}
+                recipientEmail="info@aimedicine.org.sa"
+                subjectPrefix={pick(["[WAIWIM General Inquiry]", "[استفسار مباشر - جمعية بالذكاء الاصطناعي نبتكر الدواء]"])}
+                successMessage={pick([
+                  "Your message has been sent directly to our administrative team at info@aimedicine.org.sa. Our team will review your inquiry and follow up within 3 business days.",
+                  "تم إرسال رسالتكم بنجاح ومباشرة إلى البريد الرسمي (info@aimedicine.org.sa). سيقوم الفريق المختص بمتابعة طلبكم والتواصل معكم خلال 3 أيام عمل."
+                ])}
               />
             </div>
           </div>

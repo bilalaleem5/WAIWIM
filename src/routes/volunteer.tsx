@@ -1,2 +1,2 @@
-import {createFileRoute} from "@tanstack/react-router"; import {VolunteerPage} from "@/components/site/pages";
+﻿import {createFileRoute} from "@tanstack/react-router"; import {VolunteerPage} from "@/components/site/pages";
 export const Route=createFileRoute("/volunteer")({head:()=>({meta:[{title:"Volunteer With Us — WAIWIM"},{name:"description",content:"Volunteer your research, healthcare, technology, event, or communication skills."},{property:"og:title",content:"Volunteer With WAIWIM"},{property:"og:description",content:"Your skills. Our mission. Real impact."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:VolunteerPage});
